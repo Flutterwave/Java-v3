@@ -46,7 +46,7 @@ To install the library,
 
 
 ## Environment Variables
-The foloowing environment variables need to be set before calling any method
+The following environment variables need to be set before calling any method
 
 ```java
   Environment.setSecretKey("FLWSECK_TEST-92e*******-X");
