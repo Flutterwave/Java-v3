@@ -35,12 +35,18 @@ public class Transfer {
                 .map(Response::toResponse).orElseThrow();
     }
 
+    public Response getTransferRate(BigDecimal amount, String destination_currency, String source_currency){
+        //TODO: add query parameter amount
+        return Optional.of(get(getProperty("TRANSFER_FEE_ENDPOINT")))
+                .map(Response::toResponse).orElseThrow();
+    }
+
     public Response getTransfer(int id){
         return Optional.of(get(getProperty("TRANSFER_BASE")+"/"+id))
                 .map(Response::toResponse).orElseThrow();
     }
 
-    public ListResponse getAllTransfers(String page, String string){
+    public ListResponse getAllTransfers(Optional<String> page, Optional<String> status){
         //TODO: add query parameters
         return Optional.of(get(getProperty("TRANSFER_BASE")))
                 .map(ListResponse::toListResponse).orElseThrow();

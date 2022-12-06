@@ -15,7 +15,7 @@ This describes how to create an otp
 List<Medium> mediumList = new ArrayList<>();
         mediumList.add(SMS);
         
-ListResponse flwResponse = new OTP().runcreateOTP(new OTPRequest(new Customer(
+ListResponse flwResponse = new OTP().runCreateOTP(new OTPRequest(new Customer(
         "Flutterwave Developers",
         "developers@flutterwavego.com",
         "2348000000000"),
@@ -31,7 +31,7 @@ ListResponse flwResponse = new OTP().runcreateOTP(new OTPRequest(new Customer(
 This describes how to validate an otp
 
 ```java
-Response flwResponse = new OTP().runvalidateOTP(
+Response flwResponse = new OTP().runValidateOTP(
         "CF-BARTER-20221203111843688560", 
         "6834919"); 
 ```

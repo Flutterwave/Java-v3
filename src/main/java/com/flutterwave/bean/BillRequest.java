@@ -19,13 +19,13 @@ public class BillRequest extends Shared {
 
 
     public BillRequest(String country, String customer, BigDecimal amount,
-                       Optional<Recurrence> recurrence, Optional<String> ghanaAirtimeBills) {
+                       Optional<Recurrence> recurrence, Optional<GhanaAirtimeBills> ghanaAirtimeBills) {
 
         this.country = country;
         this.customer = customer;
         this.setAmount(amount);
         recurrence.ifPresent(value -> this.recurrence = String.valueOf(value));
-        ghanaAirtimeBills.ifPresent(s -> this.biller_name = s);
+        ghanaAirtimeBills.ifPresent(s -> this.biller_name = s.name());
     }
 
 }

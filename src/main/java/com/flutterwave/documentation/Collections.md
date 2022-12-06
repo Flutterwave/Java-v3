@@ -37,17 +37,29 @@ Read more about the steps [here](https://developer.flutterwave.com/docs/direct-c
 
 This section describes how you can collect card payments in the SDK. You can learn more about the payment method [here](https://developer.flutterwave.com/docs/direct-charge/card).
 ```java
-Response flwResponse = new CardCharge().runTransaction(new CardRequest("5531886652142950",
-        "564",
-        "09",
-        "32",
-        "NGN",
-        new BigDecimal("100"),
-        "Yolande Aglaé Colbert",
-        "stefan.wexler@hotmail.eu",
-        "MC-3243e8",
-        "https://www,flutterwave.ng",
-        null));
+Optional.ofNullable(new CardCharge().runTransaction(cardRequest))
+        .map(response -> {
+            switch (response.getMeta().getAuthorization().getMode()){
+                case PIN -> cardRequest.setAuthorization(new Authorization().pinAuthorization("3306"));
+                case AUS_NOAUTH -> cardRequest.setAuthorization(new Authorization().avsAuthorization(
+                        city,
+                        address,
+                        state,
+                        country,
+                        zipcode
+                ));
+                case REDIRECT -> {
+                //redirect user
+                }
+        }
+            Response authorizeResponse = new CardCharge().runTransaction(cardRequest);
+            
+            //validate
+            validateTransaction(authorizeResponse.getData().getFlw_ref());
+    
+            //verify
+            return verifyTransaction(authorizeResponse.getData().getId());
+        });
 ```
 
 ## Preauth Collections

@@ -18,10 +18,10 @@ public class PaymentPlanRequest extends  Shared{
     private  int duration;
     private  String name;
 
-    public  PaymentPlanRequest(BigDecimal amount, String name, String interval, int duration){
+    public  PaymentPlanRequest(BigDecimal amount, String name, Recurrence interval, int duration){
         this.setAmount(amount);
         this.name = name;
-        this.interval = interval;
+        this.interval = interval.name();
         this.duration = duration;
     }
 }

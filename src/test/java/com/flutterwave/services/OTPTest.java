@@ -40,12 +40,12 @@ class OTPTest {
     }
 
     @Test
-    void runcreateOTP() {
-        Assertions.assertEquals("success", new OTP().runcreateOTP(otpRequest).getStatus());
+    void runCreateOTP() {
+        Assertions.assertEquals("success", new OTP().runCreateOTP(otpRequest).getStatus());
     }
 
     @Test
-    void runvalidateOTP(){
-        Assertions.assertEquals("success", new OTP().runvalidateOTP("CF-BARTER-20221203111843688560", "6834919").getStatus());
+    void runValidateOTP(){
+        Assertions.assertEquals("success", new OTP().runValidateOTP("CF-BARTER-20221203111843688560", "6834919").getStatus());
     }
 }

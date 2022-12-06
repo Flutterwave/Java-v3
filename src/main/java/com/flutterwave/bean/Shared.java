@@ -32,6 +32,7 @@ public abstract class Shared {
     private String billing_state;
     private String billing_country;
     private String account_bank;
+    private String account_name;
     private String account_number;
     private Meta meta;
 

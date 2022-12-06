@@ -23,3 +23,60 @@ Response flwResponse = new Transfer()
         new BigDecimal("10"),
         "NGN"));
 ```
+
+## Retry a Transfer
+
+This describes how to retry a transfer
+
+```java
+Response flwResponse = new Transfer().retry(id);
+```
+
+## Create a Bulk transfer
+
+This describes how to create a bulk transfer
+
+```java
+List<TransferRequest> transferRequestList = new ArrayList<>();
+        transferRequestList.add(transferRequest);
+        
+Response flwResponse = new Transfer()
+        .runBulkTransaction(transferRequestList);
+```
+
+## Get Transfer fees
+
+This describes how to get a transfer fee
+
+```java
+Response flwResponse = new Transfer()
+        .getFee(new BigDecimal("200"));
+```
+
+## Get all Transfers
+
+This describes how to get all transfers
+
+```java
+Response flwResponse = new Transfer()
+        .getAllTransfers(Optional.page, 
+        Optional.status);
+```
+
+## Fetch a Transfer
+
+This describes how to get all transfers
+
+```java
+Response flwResponse = new Transfer().getTransfer(id);
+```
+
+## Get Transfer Rates
+
+This describes how to get transfer rates
+
+```java
+Response flwResponse = new Transfer()
+        .getTransferRate(new BigDecimal("200"),
+        "USD", "NGN");
+```

@@ -15,12 +15,12 @@ import static com.flutterwave.utility.Properties.getProperty;
  */
 public class OTP {
 
-    public ListResponse runcreateOTP(OTPRequest otpRequest){
+    public ListResponse runCreateOTP(OTPRequest otpRequest){
         return Optional.of(post(getProperty("OTP_BASE"), otpRequest.toString()))
                 .map(ListResponse::toListResponse).orElseThrow();
     }
 
-    public Response runvalidateOTP(String reference, String otp){
+    public Response runValidateOTP(String reference, String otp){
         return Optional.of(post(getProperty("OTP_BASE")+"/"+reference+"/validate",
                         new JSONObject().put("otp", otp).toString()))
                 .map(Response::toResponse).orElseThrow();

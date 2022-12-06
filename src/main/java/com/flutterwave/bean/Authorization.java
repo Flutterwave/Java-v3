@@ -53,4 +53,8 @@ public class Authorization {
         return this;
     }
 
+    public AuthorizationModes getMode(){
+        return  AuthorizationModes.valueOf(this.mode.toUpperCase());
+    }
+
 }

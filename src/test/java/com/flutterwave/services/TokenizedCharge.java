@@ -1,5 +1,6 @@
 package com.flutterwave.services;
 
+import com.flutterwave.bean.ListResponse;
 import com.flutterwave.bean.Response;
 import com.flutterwave.bean.TokenizedChargeRequest;
 import com.flutterwave.bean.UpdateTokenRequest;
@@ -25,9 +26,9 @@ public class TokenizedCharge {
                 .map(Response::toResponse).orElseThrow();
     }
 
-    public Response runGetBulkTransaction(int bulk_id){
+    public ListResponse runGetBulkTransaction(int bulk_id){
         return Optional.of(get(getProperty("BULK_TOKENIZED_CHARGE_BASE")+bulk_id+"/transactions"))
-                .map(Response::toResponse).orElseThrow();
+                .map(ListResponse::toListResponse).orElseThrow();
     }
 
     public Response runGetBulkTransactionStatus(int bulk_id){

@@ -34,13 +34,16 @@ public class Bills {
                 .map(ListResponse::toListResponse).orElseThrow();
     }
 
-    public Response validateBillService(int item_code, String code, String customer){
+    public Response validateBillService(String item_code, String code, String customer){
         //TODO: ADD QUERY PARAMETERS
         return Optional.of(get(getProperty("VALIDATE_BILL_SERVICE_ENDPOINT")+item_code+"/validate"))
                 .map(Response::toResponse).orElseThrow();
     }
 
-    public ListResponse getCategories(int id){
+    public ListResponse getCategories(Optional<Integer> airtime, Optional<Integer> data_bundle,
+                                      Optional<Integer> power, Optional<Integer> internet,
+                                      Optional<Integer> toll, Optional<Integer> cable, Optional<String> biller_code){
+        //TODO: add query paaramters
         return Optional.of(get(getProperty("BILL_CATEGORY_ENDPOINT")))
                 .map(ListResponse::toListResponse).orElseThrow();
     }

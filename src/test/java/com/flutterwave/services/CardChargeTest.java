@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+import static com.flutterwave.bean.AuthorizationModes.PIN;
 import static com.flutterwave.bean.ChargeTypes.CARD;
 
 class CardChargeTest {
@@ -41,15 +42,30 @@ class CardChargeTest {
 
     @Test
     void authorizeTransactionPin() {
-        cardRequest.setAuthorization(new Authorization().pinAuthorization("3306"));
-        Response response = new CardCharge().runTransaction(cardRequest);
-        Assertions.assertEquals("success", response.getStatus());
+        Optional.ofNullable(new CardCharge().runTransaction(cardRequest))
+                .map(response -> {
+                    switch (response.getMeta().getAuthorization().getMode()){
+                        case PIN -> cardRequest.setAuthorization(new Authorization().pinAuthorization("3306"));
+                        case AUS_NOAUTH -> cardRequest.setAuthorization(new Authorization().avsAuthorization("",
+                                "",
+                                "",
+                                "",
+                                ""));
+                        case REDIRECT -> {
+                            //redirect user
+                        }
+                    }
+                    Response authorizeResponse = new CardCharge().runTransaction(cardRequest);
 
-        //validate
-        validateTransaction(response.getData().getFlw_ref());
+                    Assertions.assertEquals("success", authorizeResponse.getStatus());
 
-        //verify
-        verifyTransaction(response.getData().getId());
+                    //validate
+                    validateTransaction(authorizeResponse.getData().getFlw_ref());
+
+                    //verify
+                    verifyTransaction(authorizeResponse.getData().getId());
+                    return null;
+                });
     }
 
     void validateTransaction(String flw_ref) {

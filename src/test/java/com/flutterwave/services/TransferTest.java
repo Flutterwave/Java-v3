@@ -6,6 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,10 +38,15 @@ class TransferTest {
 
     @Test
     void runBulkTransaction() {
+        List<TransferRequest> transferRequestList = new ArrayList<>();
+        transferRequestList.add(transferRequest);
+
+        Assertions.assertEquals("success", new Transfer().runBulkTransaction(transferRequestList).getStatus());
     }
 
     @Test
     void retry() {
+        Assertions.assertEquals("success", new Transfer().retry(0).getStatus());
     }
 
     @Test
@@ -47,10 +55,18 @@ class TransferTest {
     }
 
     @Test
+    void getTransferRate() {
+        Assertions.assertEquals("success", new Transfer().getTransferRate(new BigDecimal("200"),
+                "USD", "NGN").getStatus());
+    }
+
+    @Test
     void getTransfer() {
+        Assertions.assertEquals("success", new Transfer().getTransfer(0).getStatus());
     }
 
     @Test
     void getAllTransfers() {
+        Assertions.assertEquals("success", new Transfer().getAllTransfers(Optional.empty(), Optional.empty()).getStatus());
     }
 }
