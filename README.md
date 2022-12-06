@@ -46,7 +46,7 @@ To install the library,
 
 
 ## Environment Variables
-The following environment variables need to be set before calling any method
+The foloowing environment variables need to be set before calling any method
 
 ```java
   Environment.setSecretKey("FLWSECK_TEST-92e*******-X");
@@ -62,7 +62,7 @@ Read the [requirement section](#requirements) for more information on how to get
 ## Usage
 1. [Collections](documentation/Collections.md)
 2. [Tokenization](documentation/Tokenization.md)
-3. [Split payments](documentation/SplitPayments.md)
+3. [Split payments](documentation/SubAccounts.md)
 4. [Scheduled payments](documentation/ScheduledPayments.md)
 5. [Transfers](documentation/Transfers.md)
 6. [Card Issuing](documentation/CardIssuing.md)
@@ -73,8 +73,10 @@ Read the [requirement section](#requirements) for more information on how to get
 11. [Banks](documentation/Banks.md)
 12. [Settlements](documentation/Settlements.md)
 13. [OTP](documentation/OTP.md)
-13. [Ebills](documentation/Ebills.md)
-14. [Misc](documentation/Misc.md)
+14. [Ebills](documentation/Ebills.md)
+15. [Misc](documentation/Misc.md)
+16. [Subscriptions](documentation/Subscriptions.md)
+17. [PaymentPlans](documentation/PaymentPlans.md)
 
 
 ## Debugging Errors
