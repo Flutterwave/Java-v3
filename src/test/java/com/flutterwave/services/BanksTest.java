@@ -15,7 +15,7 @@ class BanksTest {
 
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
     }
 
     @Test

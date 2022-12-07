@@ -20,8 +20,7 @@ class PreAuthorizationTest {
 
     @BeforeEach
     void setUp() {
-
-
+        Environments.setUp();
 
         preAuthorizationRequest = new PreAuthorizationRequest(
                 "5531886652142950",

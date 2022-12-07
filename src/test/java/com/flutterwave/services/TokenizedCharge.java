@@ -4,6 +4,7 @@ import com.flutterwave.bean.ListResponse;
 import com.flutterwave.bean.Response;
 import com.flutterwave.bean.TokenizedChargeRequest;
 import com.flutterwave.bean.UpdateTokenRequest;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +17,11 @@ import static com.flutterwave.utility.Properties.getProperty;
  * @author Cleopatra Douglas
  */
 public class TokenizedCharge {
+
+    @BeforeEach
+    void setUp() {
+        Environments.setUp();
+    }
 
     public Response runTransaction(TokenizedChargeRequest tokenizedChargeRequest){
         return Optional.of(post(getProperty("TOKENIZED_CHARGE_BASE"), tokenizedChargeRequest.toString(),

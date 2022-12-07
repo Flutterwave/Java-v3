@@ -20,6 +20,8 @@ class PaymentPlanTest {
 
     @BeforeEach
     void setUp() {
+        Environments.setUp();
+
         paymentPlanRequest = new PaymentPlanRequest(new BigDecimal("5000"),
                 "the akhlm postman plan 2",
                 MONTHLY,

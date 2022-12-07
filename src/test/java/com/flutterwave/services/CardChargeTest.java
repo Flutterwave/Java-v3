@@ -19,8 +19,7 @@ class CardChargeTest {
 
     @BeforeEach
     void setUp() {
-
-
+        Environments.setUp();
 
         cardRequest = new CardRequest("5531886652142950",
                 "564",

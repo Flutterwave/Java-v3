@@ -1,5 +1,6 @@
 package com.flutterwave.services.misc;
 
+import com.flutterwave.services.Environments;
 import com.flutterwave.utility.Environment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +16,7 @@ class ResolveBVNTest {
 private String bvn;
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
 
         bvn = "123456789010";
     }

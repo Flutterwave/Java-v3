@@ -19,6 +19,7 @@ class VirtualCardTest {
 
     @BeforeEach
     void setUp() {
+        Environments.setUp();
 
         virtualCardRequest = new VirtualCardRequest("USD",
                 new BigDecimal("5"),

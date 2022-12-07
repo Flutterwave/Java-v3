@@ -23,7 +23,7 @@ class MobileMoneyRequestTest {
 
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
 
         mpesaRequest = new MpesaRequest("MC-15852113s09v5050e8",
                 new BigDecimal("10"),

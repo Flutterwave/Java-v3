@@ -20,6 +20,7 @@ class TransferTest {
 
     @BeforeEach
     void setUp() {
+        Environments.setUp();
 
         transferRequest = new TransferRequest("https://www.flutterwave.com/ng/",
                 "akhlm-pstmnpyt-rfxx007_PMCKDU_1",

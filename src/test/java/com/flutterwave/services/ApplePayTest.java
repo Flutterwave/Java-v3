@@ -20,7 +20,7 @@ class ApplePayTest {
 
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
 
         applePayRequest= new ApplePayRequest("MC-TEST-123456",
                 new BigDecimal("10"),

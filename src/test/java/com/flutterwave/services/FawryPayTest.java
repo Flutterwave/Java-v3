@@ -19,6 +19,8 @@ class FawryPayTest {
 
     @BeforeEach
     void setUp() {
+        Environments.setUp();
+
         fawryPayRequest = new FawryPayRequest("fawrySample1",
                 new BigDecimal("10"),
                 "user@flw.com",

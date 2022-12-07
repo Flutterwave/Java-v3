@@ -18,7 +18,7 @@ class BeneficiariesTest {
 
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
 
         beneficiaryRequest = new BeneficiaryRequest("0690000034",
                 "044",

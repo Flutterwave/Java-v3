@@ -13,7 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class SettlementsTest {
 
-    @Test
+    @BeforeEach
+    void setUp() {
+        Environments.setUp();
+    }
+
+        @Test
     void runGetAllSettlements() {
         Assertions.assertEquals("success", new Settlements().runGetAllSettlements(Optional.empty(),
                 Optional.empty(),

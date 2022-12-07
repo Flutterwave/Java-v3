@@ -20,8 +20,7 @@ class BanKTransferTest {
 
     @BeforeEach
     void setUp() {
-
-
+        Environments.setUp();
         banKTransferRequest = new BanKTransferRequest(Optional.empty(),
                 "ref001",
                 Optional.of(new BigDecimal("10")),

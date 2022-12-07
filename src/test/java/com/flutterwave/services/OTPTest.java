@@ -23,7 +23,7 @@ class OTPTest {
 
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
 
         List<Medium> mediumList = new ArrayList<>();
         mediumList.add(SMS);

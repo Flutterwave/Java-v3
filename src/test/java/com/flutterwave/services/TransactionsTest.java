@@ -16,6 +16,7 @@ class TransactionsTest {
 
     @BeforeEach
     void setUp() {
+        Environments.setUp();
     }
 
     @Test

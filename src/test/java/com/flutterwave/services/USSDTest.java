@@ -18,7 +18,7 @@ class USSDTest {
 
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
 
         ussdRequest = new USSDRequest("MC-15852309v5050e8y",
                 "057",

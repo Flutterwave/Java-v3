@@ -24,7 +24,7 @@ class SubAccountsTest {
 
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
 
         collectionsSubAccountRequest = new CollectionsSubAccountRequest("044",
                 "0690000037",

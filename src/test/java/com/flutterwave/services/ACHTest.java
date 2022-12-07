@@ -21,7 +21,7 @@ class ACHTest {
 
     @BeforeEach
     void setUp() {
-
+        Environments.setUp();
 
         achRequest = new ACHRequest("MC-1585230ew9v5050e8",
                 new BigDecimal("100"),

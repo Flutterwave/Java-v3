@@ -20,8 +20,7 @@ class BankAccountTest {
 
     @BeforeEach
     void setUp() {
-
-
+        Environments.setUp();
 
         NGNbankAccountRequest = new BankAccountRequest("MC-1585230ew9v5050e8",
                 new BigDecimal("100"),

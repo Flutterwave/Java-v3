@@ -19,6 +19,8 @@ class VirtualAccountTest {
 
     @BeforeEach
     void setUp() {
+        Environments.setUp();
+
         virtualAccountRequest = new VirtualAccountRequest("developers@flutterwavego.com",
                 Optional.of("12345678901"),
                 Optional.of(new BigDecimal("10")),

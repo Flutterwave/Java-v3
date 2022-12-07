@@ -22,6 +22,9 @@ class TokenizedChargeTest {
 
     @BeforeEach
     void setUp() {
+
+        Environments.setUp();
+
         tokenizedChargeRequest = new TokenizedChargeRequest("flw-t1nf-f9b3bf384cd30d6fca42b6df9d27bd2f-m03k",
                 "NGN",
                 "NG",

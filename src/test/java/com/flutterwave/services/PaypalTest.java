@@ -19,6 +19,8 @@ class PaypalTest {
 
     @BeforeEach
     void setUp() {
+        Environments.setUp();
+
         paypalRequest = new PaypalRequest(
                 "John Madakin",
                 "Robert K Gagne",

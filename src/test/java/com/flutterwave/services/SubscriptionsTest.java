@@ -11,6 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class SubscriptionsTest {
 
+    @BeforeEach
+    void setUp() {
+        Environments.setUp();
+    }
+
+
     @Test
     void getAllSubscriptions() {
         Assertions.assertEquals("success", new Subscriptions().getAllSubscriptions().getStatus());

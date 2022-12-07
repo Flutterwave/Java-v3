@@ -23,6 +23,8 @@ class BillsTest {
 
     @BeforeEach
     void setUp() {
+        Environments.setUp();
+
         billRequest = new BillRequest("NG",
                 "+23490803840303",
                 new BigDecimal("'500'"),
