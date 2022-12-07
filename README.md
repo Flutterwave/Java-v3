@@ -73,10 +73,9 @@ Read the [requirement section](#requirements) for more information on how to get
 11. [Banks](documentation/Banks.md)
 12. [Settlements](documentation/Settlements.md)
 13. [OTP](documentation/OTP.md)
-14. [Ebills](documentation/Ebills.md)
-15. [Misc](documentation/Misc.md)
-16. [Subscriptions](documentation/Subscriptions.md)
-17. [PaymentPlans](documentation/PaymentPlans.md)
+14. [Misc](documentation/Misc.md)
+15. [Subscriptions](documentation/Subscriptions.md)
+16. [PaymentPlans](documentation/PaymentPlans.md)
 
 
 ## Debugging Errors

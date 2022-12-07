@@ -187,7 +187,7 @@ Response flwResponse = new MobileMoney().runGhanaMobileMoneyTransaction(new Ghan
 Sample Response
 ```json
 {
-  "status": "success",
+  "actions": "success",
   "message": "Charge initiated",
   "meta": {
     "authorization": {

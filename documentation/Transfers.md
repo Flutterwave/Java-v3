@@ -60,7 +60,7 @@ This describes how to get all transfers
 ```java
 Response flwResponse = new Transfer()
         .getAllTransfers(Optional.page, 
-        Optional.status);
+        Optional.actions);
 ```
 
 ## Fetch a Transfer

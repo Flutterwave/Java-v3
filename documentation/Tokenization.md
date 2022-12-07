@@ -46,7 +46,7 @@ ListResponse flwResponse = new TokenizedCharge()
         .runGetBulkTransaction(id);
 ```
 
-## Get status of bulk Tokenized Charges
+## Get actions of bulk Tokenized Charges
 
 This describes how to get bulk tokenized charge
 

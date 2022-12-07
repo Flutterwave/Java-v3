@@ -64,9 +64,9 @@ Response response = new Bills()
         .getBills(from, to);
 ```
 
-##  Get status of a bill payment
+##  Get actions of a bill payment
 
-This describes how to get status of a bill payment
+This describes how to get actions of a bill payment
 
 ```java
 Response response = new Bills().getStatus(id);

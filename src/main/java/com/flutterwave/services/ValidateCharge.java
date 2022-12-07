@@ -12,6 +12,7 @@ import lombok.Setter;
 
 import java.util.Optional;
 
+import static com.flutterwave.bean.ChargeTypes.VALIDATE_CHARGE;
 import static com.flutterwave.bean.Verb.POST;
 import static com.flutterwave.utility.Properties.getProperty;
 
@@ -23,6 +24,8 @@ public class ValidateCharge {
     private String flw_ref;
     private String type;
 
+    private String ERROR = "Error processing request, please check logs";
+
     public ValidateCharge(String otp, String flw_ref, Optional<ChargeTypes> type){
         this.otp = otp;
         this.flw_ref = flw_ref;
@@ -32,8 +35,8 @@ public class ValidateCharge {
         return Optional.ofNullable(Client.runTransaction(
                 getProperty("VALIDATE_CHARGE_ENDPOINT"),
                 this.toString(),
-                POST))
-                .map(Response::toResponse).orElseThrow();
+                POST, VALIDATE_CHARGE, null))
+                .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
 
     @Override

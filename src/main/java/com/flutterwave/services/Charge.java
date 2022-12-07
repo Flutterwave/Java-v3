@@ -8,7 +8,6 @@ import com.flutterwave.client.Client;
 import java.util.Optional;
 
 import static com.flutterwave.bean.Verb.POST;
-import static com.flutterwave.metric.Metric.send;
 import static com.flutterwave.utility.Properties.getProperty;
 
 public abstract class Charge {
@@ -19,11 +18,10 @@ public abstract class Charge {
      * @return Response which represents FLUTTERWAVE's JSON responses
      */
     public Response runTransaction(String request, ChargeTypes type, boolean encrypyt, Optional<String> urlSuffix){
-        new Thread(() -> send(type)).start();
         return Optional.ofNullable(Client.runTransaction(
                         getProperty("CHARGE_BASE")+(urlSuffix.isEmpty() ?"?type="+type.toString().toLowerCase() : urlSuffix),
                         encrypyt?new Request(request).toString():request,
-                        POST))
+                        POST, type, null))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException("Error processing request, please check logs"));
     }
 }
