@@ -20,9 +20,7 @@ class GooglePayTest {
 
     @BeforeEach
     void setUp() {
-
-
-
+        
         googlePayRequest= new GooglePayRequest("MC-TEST-123456",
                 new BigDecimal("10"),
                 "stefan.wexler@hotmail.eu",
