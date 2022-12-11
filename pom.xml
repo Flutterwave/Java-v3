@@ -4,21 +4,59 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>rave-java-v2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.flutterwave</groupId>
+    <artifactId>f4b-java</artifactId>
+    <version>3.0</version>
+    <packaging>jar</packaging>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description> The Java library provides easy access to Flutterwave for Business (F4B) v3 APIs for your Java codebase. It abstracts the complexity involved in direct integration and allows you to make quick calls to the APIs.</description>
+    <url>https://github.com/Flutterwave/Java</url>
+
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Cleopatra Douglas</name>
+            <email>developers@flutterwavego.com</email>
+            <organization>Flutterwave</organization>
+            <organizationUrl>https://flutterwave.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/Flutterwave/Java.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Flutterwave/Java.git</developerConnection>
+        <url>https://github.com/Flutterwave/Java/tree/main</url>
+    </scm>
+
+    <!--    <distributionManagement>-->
+    <!--    <snapshotRepository>-->
+    <!--        <id>ossrh</id>-->
+    <!--        <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+    <!--    </snapshotRepository>-->
+    <!--    <repository>-->
+    <!--        <id>ossrh</id>-->
+    <!--        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+    <!--    </repository>-->
+    <!--    </distributionManagement>-->
 
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.1</version>
+            <version>5.9.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>6.0.21.Final</version>
+            <version>8.0.0.Final</version>
         </dependency>
         <dependency>
             <groupId>javax.validation</groupId>
@@ -35,16 +73,17 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
             <type>jar</type>
-        </dependency>        <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpcore</artifactId>
-        <version>4.4.9</version>
-        <type>jar</type>
-    </dependency>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.15</version>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
+            <version>1.18.24</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -55,17 +94,17 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.13.2.2</version>
+            <version>2.14.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.9.1</version>
+            <version>2.10</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
+            <version>23.0.0</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
