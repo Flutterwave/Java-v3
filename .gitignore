@@ -1,2 +1,6 @@
 src/test/java/com/flutterwave/services/Environments.java
 .idea
+target
+target/test-classes/com/flutterwave/services/Environments.class
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
