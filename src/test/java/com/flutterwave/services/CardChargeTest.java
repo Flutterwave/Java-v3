@@ -29,7 +29,7 @@ class CardChargeTest {
                 new BigDecimal("100"),
                 "Yolande Aglaé Colbert",
                 "stefan.wexler@hotmail.eu",
-                "MC-3243e8",
+                "MC-3243e248",
                 "https://www,flutterwave.ng",
                 null);
     }
@@ -55,6 +55,7 @@ class CardChargeTest {
                         }
                     }
                     Response authorizeResponse = new CardCharge().runTransaction(cardRequest);
+                    System.out.println("authorizeResponse response ==>" + authorizeResponse);
 
                     Assertions.assertEquals("success", authorizeResponse.getStatus());
 

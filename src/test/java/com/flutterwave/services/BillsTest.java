@@ -27,7 +27,7 @@ class BillsTest {
 
         billRequest = new BillRequest("NG",
                 "+23490803840303",
-                new BigDecimal("'500'"),
+                new BigDecimal("500"),
                         Optional.of(ONCE),
                         Optional.empty());
     }
@@ -61,7 +61,7 @@ class BillsTest {
     @Test
     void validateBillService() {
         Assertions.assertEquals("success", new Bills().validateBillService("AT099",
-                "BIL099", "+2348109328188").getStatus());
+                "BIL099", "2348109328188").getStatus());
     }
 
     @Test

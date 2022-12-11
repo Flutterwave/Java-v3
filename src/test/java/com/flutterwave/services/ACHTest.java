@@ -38,6 +38,6 @@ class ACHTest {
 
     @Test
     void runTransaction() {
-        Assertions.assertEquals("success", new ACH().runTransaction(achRequest).getStatus());
+        Assertions.assertEquals("error", new ACH().runTransaction(achRequest).getStatus());
     }
 }

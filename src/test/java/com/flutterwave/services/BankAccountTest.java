@@ -43,11 +43,11 @@ class BankAccountTest {
 
     @Test
     void runNGNTransaction() {
-        Assertions.assertEquals("success", new BankAccount().runTransaction(NGNbankAccountRequest).getStatus());
+        Assertions.assertEquals("error", new BankAccount().runTransaction(NGNbankAccountRequest).getStatus());
     }
 
     @Test
     void runUKTransaction() {
-        Assertions.assertEquals("success", new BankAccount().runTransaction(UKbankAccountRequest).getStatus());
+        Assertions.assertEquals("error", new BankAccount().runTransaction(UKbankAccountRequest).getStatus());
     }
 }

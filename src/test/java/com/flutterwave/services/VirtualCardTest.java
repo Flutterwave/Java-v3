@@ -22,7 +22,7 @@ class VirtualCardTest {
         Environments.setUp();
 
         virtualCardRequest = new VirtualCardRequest("USD",
-                new BigDecimal("5"),
+                new BigDecimal("1"),
                 "NGN",
                 "Example User.",
                 "333, Fremont Street",

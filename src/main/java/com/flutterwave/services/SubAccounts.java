@@ -27,7 +27,7 @@ public class SubAccounts {
         return type.equals(COLLECTION) ? Optional.of(post(getProperty("COLLECTIONS_SUBACCOUNT_BASE"),
                         collectionsSubAccountRequest.toString(), SUBACCOUNT, null))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR))
-                :Optional.of(post(getProperty("PAYOUT_SUBACCOUNT_BASE"),
+                : Optional.of(post(getProperty("PAYOUT_SUBACCOUNT_BASE"),
                         payoutSubAccountRequest.toString(), SUBACCOUNT, null))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
@@ -41,13 +41,16 @@ public class SubAccounts {
         bank_name.ifPresent(s -> nameValuePairs.add(new BasicNameValuePair("bank_name", s)));
         page.ifPresent(s -> nameValuePairs.add(new BasicNameValuePair("page", s.toString())));
 
-        return type.equals(COLLECTION) ? Optional.of(get(
-                getProperty("COLLECTIONS_SUBACCOUNT_BASE"),
-                SUBACCOUNT,
-                nameValuePairs)).map(ListResponse::toListResponse).orElseThrow(() -> new RuntimeException(ERROR))
+        return type.equals(COLLECTION) ? Optional.of(
+                        get(getProperty("COLLECTIONS_SUBACCOUNT_BASE"),
+                                SUBACCOUNT,
+                                nameValuePairs
+                        )).map(ListResponse::toListResponse)
+                .orElseThrow(() -> new RuntimeException(ERROR))
                 : Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE"),
-                SUBACCOUNT,
-                null)).map(ListResponse::toListResponse).orElseThrow(() -> new RuntimeException(ERROR));
+                        SUBACCOUNT,
+                        null)).map(ListResponse::toListResponse)
+                .orElseThrow(() -> new RuntimeException(ERROR));
 
     }
 
@@ -58,26 +61,29 @@ public class SubAccounts {
         include_limit.ifPresent(s -> nameValuePairs.add(new BasicNameValuePair("include_limit", s)));
 
         return type.equals(COLLECTION) ?
-                Optional.of(get(getProperty("COLLECTIONS_SUBACCOUNT_BASE")+"/" +id, SUBACCOUNT, null))
-                .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR))
-                : Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE")+"/" +account_reference, SUBACCOUNT, nameValuePairs))
+                Optional.of(get(getProperty("COLLECTIONS_SUBACCOUNT_BASE") + "/" + id, SUBACCOUNT,
+                                null))
+                        .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR))
+                : Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE") + "/" + account_reference, SUBACCOUNT,
+                        nameValuePairs))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
 
     public Response updateSubAccount(int id, UpdateCollectionSubAccountRequest updateCollectionSubAccountRequest,
                                      Optional<UpdatePayoutSubAccountRequest> updatePayoutSubAccountRequest,
-                                     Optional<String> account_reference, SubAccountTypes type){
+                                     Optional<String> account_reference, SubAccountTypes type) {
         return type.equals(COLLECTION) ?
                 Optional.of(put(getProperty("SUBSCRIPTION_BASE") + "/" + id,
-                        updateCollectionSubAccountRequest.toString(), SUBACCOUNT, null))
-                .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR)) :
+                                updateCollectionSubAccountRequest.toString(), SUBACCOUNT, null))
+                        .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR)) :
                 Optional.of(put(getProperty("PAYOUT_SUBACCOUNT_BASE") + "/" + account_reference,
                                 updatePayoutSubAccountRequest.toString(), SUBACCOUNT, null))
                         .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
 
     public Response runDeleteCollectionSubAccounts(int id) {
-        return Optional.of(delete(getProperty("COLLECTIONS_SUBACCOUNT_BASE")+ "/" + id, SUBACCOUNT, null))
+        return Optional.of(delete(getProperty("COLLECTIONS_SUBACCOUNT_BASE") + "/" + id,
+                        SUBACCOUNT, null))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
 
@@ -89,7 +95,7 @@ public class SubAccounts {
         nameValuePairs.add(new BasicNameValuePair("to", to));
         nameValuePairs.add(new BasicNameValuePair("currency", currency));
 
-        return Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE")+ "/" + account_reference,
+        return Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE") + "/" + account_reference,
                         SUBACCOUNT, nameValuePairs))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
@@ -98,7 +104,7 @@ public class SubAccounts {
         List<NameValuePair> nameValuePairs = new ArrayList<>();
         nameValuePairs.add(new BasicNameValuePair("currency", currency));
 
-        return Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE")+ "/" + account_reference +"/balances",
+        return Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE") + "/" + account_reference + "/balances",
                         SUBACCOUNT, nameValuePairs))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
@@ -107,7 +113,7 @@ public class SubAccounts {
         List<NameValuePair> nameValuePairs = new ArrayList<>();
         nameValuePairs.add(new BasicNameValuePair("currency", currency));
 
-        return Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE")+ "/" + account_reference +"/static-account",
+        return Optional.of(get(getProperty("PAYOUT_SUBACCOUNT_BASE") + "/" + account_reference + "/static-account",
                         SUBACCOUNT, null))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }

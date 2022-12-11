@@ -29,7 +29,7 @@ public class Client {
         CloseableHttpClient client = HttpClientBuilder.create().build();
         CloseableHttpResponse closeableHttpResponse;
 //        new Thread(() -> send(chargeType)).start();
-        //send(chargeType);
+        send(chargeType);
 
         try {
             URI uri;

@@ -45,7 +45,7 @@ class PreAuthorizationTest {
 
     @Test
     void runCaptureTransaction() {
-        Assertions.assertEquals("success", new PreAuthorization().runCaptureTransaction("sampleRef134", new BigDecimal("20")).getStatus());
+        Assertions.assertEquals("success", new PreAuthorization().runCaptureTransaction("sample-ref", new BigDecimal("20")).getStatus());
     }
 
     @Test

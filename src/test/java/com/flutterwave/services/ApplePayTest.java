@@ -22,7 +22,7 @@ class ApplePayTest {
     void setUp() {
         Environments.setUp();
 
-        applePayRequest= new ApplePayRequest("MC-TEST-123456",
+        applePayRequest= new ApplePayRequest("MC-TEST-122324353456",
                 new BigDecimal("10"),
                 "stefan.wexler@hotmail.eu",
                 "09012345678",

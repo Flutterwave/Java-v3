@@ -14,7 +14,6 @@ public class Customer extends Shared{
     private String name;
     private String phone;
 
-
     public Customer(String name, String email, String phone){
         this.name = name;
         this.setEmail(email);

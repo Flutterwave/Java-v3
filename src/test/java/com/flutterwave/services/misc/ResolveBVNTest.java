@@ -23,6 +23,6 @@ private String bvn;
 
     @Test
     void runTransaction() {
-        Assertions.assertEquals("success", new ResolveBVN().runTransaction(bvn).getStatus());
+        Assertions.assertEquals("error", new ResolveBVN().runTransaction(bvn).getStatus());
     }
 }

@@ -19,7 +19,7 @@ public abstract class Charge {
      */
     public Response runTransaction(String request, ChargeTypes type, boolean encrypyt, Optional<String> urlSuffix){
         return Optional.ofNullable(Client.runTransaction(
-                        getProperty("CHARGE_BASE")+(urlSuffix.isEmpty() ?"?type="+type.toString().toLowerCase() : urlSuffix),
+                        getProperty("CHARGE_BASE")+(urlSuffix.isEmpty() ?"?type="+type.toString().toLowerCase() : urlSuffix.get()),
                         encrypyt?new Request(request).toString():request,
                         POST, type, null))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException("Error processing request, please check logs"));

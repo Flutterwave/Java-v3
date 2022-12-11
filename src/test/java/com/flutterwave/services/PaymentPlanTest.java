@@ -44,7 +44,7 @@ class PaymentPlanTest {
 
     @Test
     void getPlan() {
-        Assertions.assertEquals("success", new PaymentPlan().getPlan(0).getStatus());
+        Assertions.assertEquals("success", new PaymentPlan().getPlan(30980).getStatus());
     }
 
     @Test
@@ -54,6 +54,6 @@ class PaymentPlanTest {
 
     @Test
     void updatePlan() {
-        Assertions.assertEquals("success", new PaymentPlan().updatePlan(0, UpdatePaymentPlanRequest).getStatus());
+        Assertions.assertEquals("success", new PaymentPlan().updatePlan(30980, UpdatePaymentPlanRequest).getStatus());
     }
 }

@@ -39,7 +39,7 @@ public class Authorization {
 
     public Authorization pinAuthorization(String pin){
         this.pin = pin;
-        this.mode = PIN.toString().toLowerCase();
+        this.mode = PIN.name().toLowerCase();
         return this;
     }
 

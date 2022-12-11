@@ -10,6 +10,6 @@ import static com.flutterwave.bean.ChargeTypes.PAYPAL;
 public class Paypal extends Charge{
 
     public Response runTransaction(PaypalRequest paypalRequest){
-        return runTransaction(paypalRequest.toString(), PAYPAL, true, Optional.empty());
+        return runTransaction(paypalRequest.toString(), PAYPAL, false, Optional.empty());
     }
 }

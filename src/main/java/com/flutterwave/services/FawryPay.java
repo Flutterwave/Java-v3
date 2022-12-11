@@ -10,6 +10,6 @@ import static com.flutterwave.bean.ChargeTypes.FAWRY_PAY;
 public class FawryPay extends Charge{
 
     public Response runTransaction(FawryPayRequest fawryPayRequest){
-        return runTransaction(fawryPayRequest.toString(), FAWRY_PAY, true, Optional.empty());
+        return runTransaction(fawryPayRequest.toString(), FAWRY_PAY, false, Optional.empty());
     }
 }

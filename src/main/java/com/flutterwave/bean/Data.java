@@ -1,24 +1,36 @@
 package com.flutterwave.bean;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.json.JSONObject;
+import org.json.JSONPropertyName;
 
 import java.math.BigDecimal;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Data {
 
-    private Customer customer;
+    private Object customer;
+    private Object meta;
     private int id;
+    private int maximum;
+    private int minimum;
     private String tx_ref;
     private String flw_ref;
     private String device_fingerprint;
     private BigDecimal amount;
     private BigDecimal charged_amount;
     private BigDecimal app_fee;
+    private BigDecimal app_feefee;
     private BigDecimal fee;
     private BigDecimal merchant_fee;
     private String processor_response;
@@ -64,6 +76,7 @@ public class Data {
     private String state;
     private String address_1;
     private String address_2;
+    private String address;
     private String zip_code;
     private String cvv;
     private String expiration;
@@ -80,7 +93,6 @@ public class Data {
     private String customer_email;
     private String settlement_id;
     private String transaction_id;
-    private String meta;
     private String subaccount_id;
     private String bank_name;
     private String split_type;
@@ -88,4 +100,43 @@ public class Data {
     private int split_ratio;
     private BigDecimal amount_settled;
     private BigDecimal amount_refunded;
+    private String response_code;
+    private String response_message;
+    private String product_code;
+    private String email;
+
+    private Customer getCustomer(){
+        try {
+            return new GsonBuilder().create().
+                    fromJson(new Gson().toJson(this.customer), Customer.class);
+        }catch (Exception e){
+            System.out.println(e);
+            throw new RuntimeException("Please use .getCustomerString()");
+        }
+    }
+
+
+    public Meta getMeta(){
+        try {
+            return new GsonBuilder().create().
+                    fromJson(new Gson().toJson(this.meta), Meta.class);
+        }catch (Exception e){
+            System.out.println(e);
+            throw new RuntimeException("Please use .getMetaString()");
+        }
+    }
+
+    public String getMetaString(){
+            if(this.meta != null){
+                return this.meta.toString();
+            }
+            return null;
+    }
+
+    public String getCustomerString(){
+        if(this.customer != null){
+            return this.customer.toString();
+        }
+        return null;
+    }
 }

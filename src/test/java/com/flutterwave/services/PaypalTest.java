@@ -48,6 +48,6 @@ class PaypalTest {
 
     @Test
     void runTransaction() {
-        Assertions.assertEquals("success", new Paypal().runTransaction(paypalRequest).getStatus());
+        Assertions.assertEquals("error", new Paypal().runTransaction(paypalRequest).getStatus());
     }
 }

@@ -41,13 +41,13 @@ public class VirtualCard {
     }
 
     public Response runFundVirtualCard(String id, FundVirtualCardRequest fundVirtualCardRequest){
-        return Optional.of(post(getProperty("VIRTUAL_CARD_BASE")+"/"+id,
+        return Optional.of(post(getProperty("VIRTUAL_CARD_BASE")+"/"+id+"/fund",
                         fundVirtualCardRequest.toString(), VIRTUAL_CARD, null))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
 
-    public Response runWithdrawVirtualCard(String id, BigDecimal amount){
-        return Optional.of(post(getProperty("VIRTUAL_CARD_BASE")+"/"+id,
+    public Response runWithdrawVirtualCard(String id,BigDecimal amount){
+        return Optional.of(post(getProperty("VIRTUAL_CARD_BASE")+"/"+id+"/withdraw",
                         new JSONObject().put("amount", amount).toString(),
                         VIRTUAL_CARD, null))
                 .map(Response::toResponse).orElseThrow(() -> new RuntimeException(ERROR));
@@ -77,7 +77,7 @@ public class VirtualCard {
         nameValuePairs.add(new BasicNameValuePair("size", size.toString()));
 
         return Optional.of(post(getProperty("VIRTUAL_CARD_BASE")+"/" +id,
-                        null, VIRTUAL_CARD, null))
+                        null, VIRTUAL_CARD, nameValuePairs))
                 .map(ListResponse::toListResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
 }

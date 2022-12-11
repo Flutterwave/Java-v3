@@ -41,11 +41,11 @@ class BeneficiariesTest {
 
     @Test
     void runGetBeneficiary() {
-        Assertions.assertEquals("success", new Beneficiaries().runGetBeneficiary(0).getStatus());
+        Assertions.assertEquals("success", new Beneficiaries().runGetBeneficiary(20505).getStatus());
     }
 
     @Test
     void runDeleteBeneficiary() {
-        Assertions.assertEquals("success", new Beneficiaries().runDeleteBeneficiary(0).getStatus());
+        Assertions.assertEquals("success", new Beneficiaries().runDeleteBeneficiary(20505).getStatus());
     }
 }

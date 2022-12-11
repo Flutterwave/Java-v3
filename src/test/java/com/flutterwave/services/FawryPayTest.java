@@ -24,8 +24,8 @@ class FawryPayTest {
         fawryPayRequest = new FawryPayRequest("fawrySample1",
                 new BigDecimal("10"),
                 "user@flw.com",
-                "EGP",
                 "09012345678",
+                "EGP",
                 "https://www.flutterwave.com",
                 Optional.empty());
 
