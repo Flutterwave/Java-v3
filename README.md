@@ -3,7 +3,8 @@
 </p>
 
 # Flutterwave v3 Java Library
-//Add shields
+[![Build Status](https://github.com/Flutterwave/Java/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/Flutterwave/Java) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 ## Introduction
 
