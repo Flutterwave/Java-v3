@@ -4,8 +4,8 @@ name: Maven CI/CD
 on:
  push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+ pull_request:
+   branches: [ master ]
 
 jobs:
   build_and_test:
