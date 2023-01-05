@@ -50,7 +50,7 @@ class BillsTest {
 
 //    @Test
     void getStatus(int id) {
-        Assertions.assertEquals("success", new Bills().getStatus(id).getStatus());
+        Assertions.assertEquals("success", new Bills().getStatus(String.valueOf(id)).getStatus());
     }
 
     @Test
