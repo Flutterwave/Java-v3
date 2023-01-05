@@ -30,7 +30,7 @@ jobs:
         - uses: actions/setup-java@v1
           with:
             java-version: 14
-        - run: mvn -B package --file pom.xml -DskipTests
+        - run: mvn -B package --file pom.xml
         - run: mkdir staging && cp target/*jar-with-dependencies.jar staging
         - uses: actions/upload-artifact@v1
           with:
