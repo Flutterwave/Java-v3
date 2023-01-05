@@ -5,6 +5,7 @@
 # Flutterwave v3 Java Library
 [![Build Status](https://github.com/Flutterwave/Java/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/Flutterwave/Java) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.flutterwave/f4b-java/badge.svg)](https://mvnrepository.com/artifact/com.flutterwave/f4b-java)
 
 ## Introduction
 
