@@ -7,8 +7,16 @@ import org.json.JSONObject;
 import static com.flutterwave.bean.ChargeTypes.DEFAULT;
 import static com.flutterwave.bean.Verb.POST;
 
+/**
+ * Handles sending metric data to assist F4B make the sdk and API better where needed.
+ * @author cleopatradouglas
+ */
 public class Metric {
 
+    /**
+     * sends the metric data needed
+     * @param type of charge
+     */
     public static void send(ChargeTypes type) {
         //validate public key is set in environment
         if (System.getProperty("publicKey") == null) {

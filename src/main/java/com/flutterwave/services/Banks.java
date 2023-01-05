@@ -12,11 +12,21 @@ import static com.flutterwave.utility.Properties.getProperty;
  * @author Cleopatra Douglas
  */
 public class Banks {
+    /**
+     * Retrieves bank list
+     * @param country to retrieve
+     * @return ListResponse
+     */
     public ListResponse getBanks(String country){
         return Optional.of(get(getProperty("BANKS_BASE")+country, GET_BANKS, null))
                 .map(ListResponse::toListResponse).orElseThrow();
     }
 
+    /**
+     * Retrieves bank branches
+     * @param id for bank
+     * @return ListResponse
+     */
     public ListResponse getBankBranches(int id){
         return Optional.of(get(getProperty("BANKS_BASE")+id+"/branches", GET_BANKS, null))
                 .map(ListResponse::toListResponse).orElseThrow();

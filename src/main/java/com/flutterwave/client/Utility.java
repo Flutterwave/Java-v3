@@ -9,7 +9,6 @@ import java.util.Optional;
 import static com.flutterwave.bean.Verb.*;
 
 public class Utility {
-
     public static String post(String url, String request, ChargeTypes chargeType, List<NameValuePair> nameValuePairs){
         return Optional.ofNullable(Client.runTransaction(
                 url,

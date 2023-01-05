@@ -31,6 +31,7 @@ public class ValidateCharge {
         this.flw_ref = flw_ref;
         type.ifPresent(chargeTypes -> this.type = String.valueOf(chargeTypes));
     }
+
     public Response runTransaction(){
         return Optional.ofNullable(Client.runTransaction(
                 getProperty("VALIDATE_CHARGE_ENDPOINT"),

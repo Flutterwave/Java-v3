@@ -4,13 +4,20 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
+/**
+ * Handles encrypting payloads sent to F4B
+ */
 public class PayloadEncryptor {
 
     private static final String ALGORITHM = "DESede";
     private static final String TRANSFORMATION = "DESede/ECB/PKCS5Padding";
 
-    public PayloadEncryptor() {}
-
+    /**
+     *
+     * @param data to be encrypted
+     * @param encryptionKey String from F4B dashboard; this is set as an ennvironment varibale before processing transactions
+     * @return String encrypted response
+     */
     public static String TripleDESEncrypt(String data, String encryptionKey) {
         final String defaultString = "";
         if (data == null || encryptionKey == null) return defaultString;

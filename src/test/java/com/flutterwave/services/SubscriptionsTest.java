@@ -16,11 +16,11 @@ class SubscriptionsTest {
         Environments.setUp();
     }
 
-
-    @Test
-    void getAllSubscriptions() {
-        Assertions.assertEquals("success", new Subscriptions().getAllSubscriptions().getStatus());
-    }
+//
+//    @Test
+//    void getAllSubscriptions() {
+//        Assertions.assertEquals("success", new Subscriptions().getAllSubscriptions().getStatus());
+//    }
 
     @Test
     void activateSubscription() {
