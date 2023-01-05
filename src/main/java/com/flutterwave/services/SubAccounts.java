@@ -42,10 +42,10 @@ public class SubAccounts {
 
     /**
      * List all subaccounts on Flutterwave.
-     * @param account_bank Optional<String> This is the sub-accounts bank ISO code
-     * @param account_number Optional<String> This is the account number associated with the subaccount you want to fetch
-     * @param bank_name Optional<String> This is the name of the bank associated with the ISO code provided in account_bankfield
-     * @param page Optional<Integer> This is the page number to retrieve e.g. setting 1 retrieves the first page
+     * @param account_bank Optional This is the sub-accounts bank ISO code
+     * @param account_number Optional This is the account number associated with the subaccount you want to fetch
+     * @param bank_name Optional This is the name of the bank associated with the ISO code provided in account_bankfield
+     * @param page Optional This is the page number to retrieve e.g. setting 1 retrieves the first page
      * @param type COLLECTION or PAYOUT
      * @return ListResponse
      */
@@ -74,8 +74,8 @@ public class SubAccounts {
     /**
      * Fetch a subaccount on Flutterwave.
      * @param id INT This is the unique id of the sub account you want to fetch. It is returned in the call to create a sub account as data.id
-     * @param account_reference Optional<String> The unique reference for the payout
-     * @param include_limit Optional<String> Pass this parameter to ensure the limit for the subaccount are returned in the response
+     * @param account_reference Optional The unique reference for the payout
+     * @param include_limit Optional Pass this parameter to ensure the limit for the subaccount are returned in the response
      * @param type COLLECTION or PAYOUT
      * @return Response
      */
@@ -99,7 +99,7 @@ public class SubAccounts {
      * @param id int This is the unique id of the subaccount you want to update. It is returned in the call to create a subaccount as data.id
      * @param updateCollectionSubAccountRequest bean
      * @param updatePayoutSubAccountRequest bean
-     * @param account_reference Optional<String> The unique reference for the payout
+     * @param account_reference Optional The unique reference for the payout
      * @param type COLLECTION or PAYOUT
      * @return
      */

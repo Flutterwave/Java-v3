@@ -85,19 +85,19 @@ public class Bills {
     /**
      * Retrieve the information for each Biller.
      * These information are important as they are required for the bill payment attempt. You can filter your query by biller type and biller_code.
-     * @param airtime Optional<Integer> This parameter allows you filter the response object for airtime billers only (MTN, Vodafone, Airtel, 9mobile).
+     * @param airtime Optional This parameter allows you filter the response object for airtime billers only (MTN, Vodafone, Airtel, 9mobile).
      *                You should set this to 1 if you would like to filter only airtime billers. Expected values are 0 and 1.
-     * @param data_bundle Optional<Integer> This parameter allows you filter the response object for data billers only (MTN, Vodafone, Airtel, 9mobile).
+     * @param data_bundle Optional This parameter allows you filter the response object for data billers only (MTN, Vodafone, Airtel, 9mobile).
      *                    You should set this to 1 if you would like to filter only data billers. Expected values are 0 and 1.
-     * @param power Optional<Integer> This parameter allows you filter the response object for power billers only (EKEDC, IKEDC, KDLC).
+     * @param power Optional This parameter allows you filter the response object for power billers only (EKEDC, IKEDC, KDLC).
      *              You should set this to 1 if you would like to filter only power billers. Expected values are 0 and 1.
-     * @param internet Optional<Integer> This parameter allows you filter the response object for internet billers only (SWIFT, Smile, ipNX).
+     * @param internet Optional This parameter allows you filter the response object for internet billers only (SWIFT, Smile, ipNX).
      *                 You should set this to 1 if you would like to filter only internet billers. Expected values are 0 and 1.
-     * @param toll Optional<Integer> This parameter allows you filter the response object for toll billers only.
+     * @param toll Optional This parameter allows you filter the response object for toll billers only.
      *             You should set this to 1 if you would like to filter only toll billers. Expected values are 0 and 1.
-     * @param cable Optional<Integer> This parameter allows you filter the response object for cable billers only (DSTV, Startimes, GOTV).
+     * @param cable Optional This parameter allows you filter the response object for cable billers only (DSTV, Startimes, GOTV).
      *              You should set this to 1 if you would like to filter only cable billers. Expected values are 0 and 1.
-     * @param biller_code Optional<String> This parameter allows you filter the response object for a specific Biller using the biller_code.
+     * @param biller_code Optional This parameter allows you filter the response object for a specific Biller using the biller_code.
      * @return ListResponse
      */
     public ListResponse getCategories(Optional<Integer> airtime, Optional<Integer> data_bundle,

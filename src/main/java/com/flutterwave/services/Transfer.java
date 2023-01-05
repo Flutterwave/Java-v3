@@ -99,8 +99,8 @@ public class Transfer {
 
     /**
      * Spool all their transfers.
-     * @param page Optional<String> specific page e.g. setting 1 retrieves the first page.
-     * @param status Optional<String> specific status e.g. fetch all successful transactions. Expected values include failed, successful.
+     * @param page Optional specific page e.g. setting 1 retrieves the first page.
+     * @param status Optional specific status e.g. fetch all successful transactions. Expected values include failed, successful.
      * @return ListResponse
      */
     public ListResponse getAllTransfers(Optional<String> page, Optional<String> status){
