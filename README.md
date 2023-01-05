@@ -23,6 +23,9 @@ Available features include:
 - Bill payments: Airtime, Data bundle, Cable, Power, Toll, E-bills, and Remitta.
 - Identity verification: Resolve bank account, resolve BVN information and generate OTP.
 
+#Heads Up!
+This libraray cannot be used on a project with a file named "base.properties" in project path.
+
 
 ## Table of Content
 
