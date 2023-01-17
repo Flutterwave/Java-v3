@@ -50,16 +50,6 @@ This Library cannot be used on a project with a file named "base.properties" in 
 There are two ways to install this.
 
 ## METHOD 1:
-Download RAVE-JAVA
-Download and add jar file as a Module to your Java project:
-
-Download from https://github.com/Flutterwave/Java/releases/latest
-
-On Intellij IDEA: File -> Project Structure -> Modules -> Dependencies Tab -> Add -> JARs or Directories -> Attach jar
-
-On Netbeans: Project properties -> Libraries -> Compile -> ADD JAR/folder -> Add Jar
-
-## METHOD 2:
 ## Maven users
 Add this dependency to your project's POM: 
 
