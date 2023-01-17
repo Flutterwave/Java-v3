@@ -47,9 +47,7 @@ This Library cannot be used on a project with a file named "base.properties" in 
 
 
 ## Installation
-There are two ways to install this.
 
-## METHOD 1:
 ## Maven users
 Add this dependency to your project's POM: 
 
