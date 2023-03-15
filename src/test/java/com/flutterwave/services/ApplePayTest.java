@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -20,7 +21,9 @@ class ApplePayTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SECRET_KEY"));
+        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
 
         applePayRequest= new ApplePayRequest("MC-TEST-122324353456",
                 new BigDecimal("10"),

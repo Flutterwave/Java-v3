@@ -2,7 +2,7 @@ package com.flutterwave.services.misc;
 
 import com.flutterwave.bean.AccountResolveRequest;
 import com.flutterwave.bean.ChargeTypes;
-import com.flutterwave.services.Environments;
+//import com.flutterwave.services.Environments;
 import com.flutterwave.services.GooglePay;
 import com.flutterwave.utility.Environment;
 import org.junit.jupiter.api.Assertions;
@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -21,8 +22,9 @@ class ResolveAccountTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
-
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
         accountResolveRequest = new AccountResolveRequest(
                 "0690000032",
                 "044",

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -18,7 +19,9 @@ class USSDTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SECRET_KEY"));
+        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
 
         ussdRequest = new USSDRequest("MC-15852309v5050e8y",
                 "057",

@@ -2,6 +2,7 @@ package com.flutterwave.services;
 
 import com.flutterwave.bean.TokenizedChargeRequest;
 import com.flutterwave.bean.UpdateTokenRequest;
+import com.flutterwave.utility.Environment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -22,23 +24,24 @@ class TokenizedChargeTest {
 
     @BeforeEach
     void setUp() {
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
 
-        Environments.setUp();
-
-        tokenizedChargeRequest = new TokenizedChargeRequest("flw-t1nf-f9b3bf384cd30d6fca42b6df9d27bd2f-m03k",
+        tokenizedChargeRequest = new TokenizedChargeRequest("flw-t1nf-cacf9661f2a07b761a166d7c894fa801-m03k",
                 "NGN",
                 "NG",
-                new BigDecimal("2000"),
-                "developers@flutterwavego.com",
-                "Flutterwave",
-                "Developers",
-                "123.876.0997.9",
+                new BigDecimal("20"),
+                "stefan.wexler@hotmail.eu",
+                "Yolande Aglaé Colbert",
+                "Colbert",
+                "0.0.0.0",
                 "Sample tokenized charge",
-                "tokenized-c-001");
+                "javasdk-test");
 
 
-        updateTokenRequest = new UpdateTokenRequest("user@example.com",
-                "Kendrick Graham",
+        updateTokenRequest = new UpdateTokenRequest("developers@flutterwavego.com",
+                "Flutterwave Developers",
                 "0813XXXXXXX");
     }
 
@@ -67,6 +70,6 @@ class TokenizedChargeTest {
 
     @Test
     void runUpdateToken() {
-        Assertions.assertEquals("success", new TokenizedCharge().runUpdateToken("", updateTokenRequest).getStatus());
+        Assertions.assertEquals("success", new TokenizedCharge().runUpdateToken("flw-t1nf-cacf9661f2a07b761a166d7c894fa801-m03k", updateTokenRequest).getStatus());
     }
 }

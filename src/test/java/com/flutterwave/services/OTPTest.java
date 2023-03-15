@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.flutterwave.bean.Medium.SMS;
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -23,7 +24,9 @@ class OTPTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SECRET_KEY"));
+        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
 
         List<Medium> mediumList = new ArrayList<>();
         mediumList.add(SMS);

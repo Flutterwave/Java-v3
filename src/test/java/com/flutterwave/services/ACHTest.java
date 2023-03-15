@@ -21,7 +21,9 @@ class ACHTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey("FLWSECK_TEST-46f402e77e0f1f0e14041e02cf5f969a-X");
+        Environment.setPublicKey("FLWPUBK_TEST-1ce6ba6dd81e497ca70596fc3f63fe3e-X");
+        Environment.setEncryptionKey("FLWSECK_TEST6e3831e35815");
 
         achRequest = new ACHRequest("MC-1585230ew9v5050e8",
                 new BigDecimal("100"),

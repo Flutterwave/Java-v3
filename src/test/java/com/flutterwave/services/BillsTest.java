@@ -3,6 +3,7 @@ package com.flutterwave.services;
 import com.flutterwave.bean.BillRequest;
 import com.flutterwave.bean.Recurrence;
 import com.flutterwave.bean.Response;
+import com.flutterwave.utility.Environment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.flutterwave.bean.Recurrence.ONCE;
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -23,7 +25,9 @@ class BillsTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SECRET_KEY"));
+        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
 
         billRequest = new BillRequest("NG",
                 "+23490803840303",

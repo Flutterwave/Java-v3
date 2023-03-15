@@ -1,5 +1,6 @@
 package com.flutterwave.services;
 
+import com.flutterwave.utility.Environment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -16,7 +18,9 @@ class TransactionsTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SECRET_KEY"));
+        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
     }
 
     @Test

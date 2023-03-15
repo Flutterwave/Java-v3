@@ -13,23 +13,27 @@ import java.util.Optional;
 
 import static com.flutterwave.bean.AuthorizationModes.PIN;
 import static com.flutterwave.bean.ChargeTypes.CARD;
+import static com.flutterwave.utility.Properties.getProperty;
 
 class CardChargeTest {
     CardRequest cardRequest;
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
 
-        cardRequest = new CardRequest("5531886652142950",
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
+
+        cardRequest = new CardRequest("5438898014560229",
                 "564",
                 "09",
                 "32",
                 "NGN",
-                new BigDecimal("100"),
+                new BigDecimal("100.88"),
                 "Yolande Aglaé Colbert",
-                "stefan.wexler@hotmail.eu",
-                "MC-3243e248",
+                "tafchaty@gmail.com",
+                "javasdk-test",
                 "https://www,flutterwave.ng",
                 null);
     }
@@ -44,7 +48,7 @@ class CardChargeTest {
         Optional.ofNullable(new CardCharge().runTransaction(cardRequest))
                 .map(response -> {
                     switch (response.getMeta().getAuthorization().getMode()){
-                        case PIN -> cardRequest.setAuthorization(new Authorization().pinAuthorization("3306"));
+                        case PIN -> cardRequest.setAuthorization(new Authorization().pinAuthorization("3310"));
                         case AUS_NOAUTH -> cardRequest.setAuthorization(new Authorization().avsAuthorization("",
                                 "",
                                 "",
@@ -64,13 +68,15 @@ class CardChargeTest {
 
                     //verify
                     verifyTransaction(authorizeResponse.getData().getId());
+                    //Response verifyResponse = new CardCharge().(cardRequest);
+                    //System.out.println("verifyResponse response ==>" + verifyResponse);
                     return null;
                 });
     }
 
     void validateTransaction(String flw_ref) {
-        cardRequest.setAuthorization(new Authorization().pinAuthorization("3306"));
-        Assertions.assertEquals("success", new ValidateCharge("1111", flw_ref, Optional.of(CARD)).runTransaction().getStatus());
+        cardRequest.setAuthorization(new Authorization().pinAuthorization("3310"));
+        Assertions.assertEquals("success", new ValidateCharge("12345", flw_ref, Optional.of(CARD)).runTransaction().getStatus());
     }
 
     void verifyTransaction(int id) {

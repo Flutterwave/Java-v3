@@ -2,6 +2,7 @@ package com.flutterwave.services;
 
 import com.flutterwave.bean.PaymentPlanRequest;
 import com.flutterwave.bean.UpdatePaymentPlanRequest;
+import com.flutterwave.utility.Environment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 
 import static com.flutterwave.bean.Recurrence.MONTHLY;
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -20,7 +22,9 @@ class PaymentPlanTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SECRET_KEY"));
+        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
 
         paymentPlanRequest = new PaymentPlanRequest(new BigDecimal("5000"),
                 "the akhlm postman plan 2",

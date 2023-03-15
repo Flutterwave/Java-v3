@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -20,7 +21,9 @@ class BanKTransferTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
         banKTransferRequest = new BanKTransferRequest(Optional.empty(),
                 "ref001",
                 Optional.of(new BigDecimal("10")),

@@ -11,6 +11,7 @@ import java.util.Optional;
 
 import static com.flutterwave.bean.SubAccountTypes.COLLECTION;
 import static com.flutterwave.bean.SubAccountTypes.PAYOUT;
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -24,7 +25,9 @@ class SubAccountsTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SECRET_KEY"));
+        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
 
         collectionsSubAccountRequest = new CollectionsSubAccountRequest("044",
                 "0690000037",

@@ -2,6 +2,7 @@ package com.flutterwave.services;
 
 import com.flutterwave.bean.FundVirtualCardRequest;
 import com.flutterwave.bean.VirtualCardRequest;
+import com.flutterwave.utility.Environment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 
 import static com.flutterwave.bean.Actions.BLOCK;
+import static com.flutterwave.utility.Properties.getProperty;
 
 /**
  * @author Cleopatra Douglas
@@ -19,7 +21,9 @@ class VirtualCardTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
 
         virtualCardRequest = new VirtualCardRequest("USD",
                 new BigDecimal("1"),

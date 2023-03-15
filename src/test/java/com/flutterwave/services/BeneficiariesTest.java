@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
+import static com.flutterwave.utility.Properties.getProperty;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -18,7 +19,9 @@ class BeneficiariesTest {
 
     @BeforeEach
     void setUp() {
-        Environments.setUp();
+        Environment.setSecretKey(getProperty("SECRET_KEY"));
+        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
 
         beneficiaryRequest = new BeneficiaryRequest("0690000034",
                 "044",
