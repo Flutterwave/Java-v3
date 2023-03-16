@@ -15,9 +15,9 @@ class SubscriptionsTest {
 
     @BeforeEach
     void setUp() {
-        Environment.setSecretKey(getProperty("SECRET_KEY"));
-        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
-        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
     }
 
 //

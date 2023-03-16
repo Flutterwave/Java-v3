@@ -1,0 +1,92 @@
+# java example
+
+name: Publish to Maven
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  check-docs-update:
+    runs-on: ubuntu-latest
+    env:
+      OS: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - uses: technote-space/get-diff-action@v6
+        with:
+          PATTERNS: |
+            +(documentation)/*.md
+            *.md
+            CHANGE*.md
+          FILES: |
+            CHANGELOG.md
+
+      - name: log git diff
+        run: |
+          echo ${{ env.GIT_DIFF }}
+          echo ${{ env.MATCHED_FILES }}
+          echo ${{ env.GIT_DIFF_FILTERED }}
+
+      - name: Check if README.md or Doc/** is updated else exit
+        if: (env.GIT_DIFF == '')
+        run: |
+          echo Update documentation files and README.md before push
+          exit 1
+
+      - name: push build status to Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took,pullRequest
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
+
+
+  distribute:
+    runs-on: ubuntu-latest
+    env:
+      OS: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
+
+
+      - name: Deploy to Maven Central
+        uses: maven-publish/setup-maven@v1
+        with:
+          maven-version: '3.8.3'
+          maven-settings: ${{ secrets.MAVEN_SETTINGS }}
+          java-version: '17'
+
+      - name: Publish to Maven Central
+        uses: maven-publish/action@v1
+        with:
+          pom: pom.xml
+          server-id: maven.central
+          server-username: ${{ secrets.MAVEN_USERNAME }}
+          server-password: ${{ secrets.MAVEN_PASSWORD }}
+          skip-cleanup: true
+
+      - name: push build status to Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took,pullRequest
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()

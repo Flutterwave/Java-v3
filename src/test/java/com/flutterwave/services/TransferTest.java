@@ -22,9 +22,9 @@ class TransferTest {
 
     @BeforeEach
     void setUp() {
-        Environment.setSecretKey(getProperty("SECRET_KEY"));
-        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
-        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
 
         transferRequest = new TransferRequest("https://www.flutterwave.com/ng/",
                 "akhlm-pstmnpyt-rfxx007_PMCKDU_1",

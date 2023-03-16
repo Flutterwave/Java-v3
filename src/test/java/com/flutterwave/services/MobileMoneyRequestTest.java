@@ -25,9 +25,9 @@ class MobileMoneyRequestTest {
 
     @BeforeEach
     void setUp() {
-        Environment.setSecretKey(getProperty("SECRET_KEY"));
-        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
-        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
 
         mpesaRequest = new MpesaRequest("MC-15852113s09v5050e8",
                 new BigDecimal("10"),

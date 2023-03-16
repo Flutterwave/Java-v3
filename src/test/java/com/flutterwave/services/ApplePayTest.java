@@ -21,9 +21,9 @@ class ApplePayTest {
 
     @BeforeEach
     void setUp() {
-        Environment.setSecretKey(getProperty("SECRET_KEY"));
-        Environment.setPublicKey(getProperty("PUBLIC_KEY"));
-        Environment.setEncryptionKey(getProperty("ENCRYPTION_KEY"));
+        Environment.setSecretKey(getProperty("SEC_KEY"));
+        Environment.setPublicKey(getProperty("PUB_KEY"));
+        Environment.setEncryptionKey(getProperty("ENCR_KEY"));
 
         applePayRequest= new ApplePayRequest("MC-TEST-122324353456",
                 new BigDecimal("10"),
