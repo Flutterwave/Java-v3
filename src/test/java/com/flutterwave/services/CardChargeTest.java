@@ -32,7 +32,7 @@ class CardChargeTest {
                 "10",
                 "33",
                 "NGN", new BigDecimal("10000"),
-                "Test Name",
+                "Tafa Chati",
                 "test@gmail.io",
                 "javasdk-test-" + new Date(),
                 "https://www,flutterwave.ng",
