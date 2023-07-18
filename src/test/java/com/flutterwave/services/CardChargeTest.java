@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.Optional;
 
 import static com.flutterwave.bean.AuthorizationModes.PIN;
@@ -25,15 +26,15 @@ class CardChargeTest {
         Environment.setPublicKey(getProperty("PUB_KEY"));
         Environment.setEncryptionKey(getProperty("ENCR_KEY"));
 
-        cardRequest = new CardRequest("5438898014560229",
-                "564",
-                "09",
-                "32",
-                "NGN",
-                new BigDecimal("100.88"),
-                "Yolande Aglaé Colbert",
-                "tafchaty@gmail.com",
-                "javasdk-test",
+        cardRequest = new CardRequest("4187427415564246",
+                "NG",
+                "812",
+                "10",
+                "33",
+                "NGN", new BigDecimal("10000"),
+                "Tafa Chati",
+                "test@gmail.io",
+                "javasdk-test-" + new Date(),
                 "https://www,flutterwave.ng",
                 null);
     }
@@ -41,6 +42,8 @@ class CardChargeTest {
     @Test
     void runTransaction() {
         Assertions.assertEquals("success", new CardCharge().runTransaction(cardRequest).getStatus());
+        //System.out.println(new CardCharge().runTransaction(cardRequest).getData().getId());
+        //verifyTransaction(new CardCharge().runTransaction(cardRequest).getData().getId());
     }
 
     @Test
@@ -57,6 +60,8 @@ class CardChargeTest {
                         case REDIRECT -> {
                             //redirect user
                         }
+                        case OTP -> cardRequest.setAuthorization(new Authorization().pinAuthorization("3310"));
+                        default -> throw new IllegalArgumentException("Unexpected value: " + response.getMeta().getAuthorization().getMode());
                     }
                     Response authorizeResponse = new CardCharge().runTransaction(cardRequest);
                     System.out.println("authorizeResponse response ==>" + authorizeResponse);
