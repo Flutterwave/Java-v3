@@ -68,7 +68,7 @@ compile("com.flutterwave:f4b-java:3.0")
 
 
 ## Environment Variables
-The foloowing environment variables need to be set before calling any method
+The following environment variables need to be set before calling any method
 
 ```java
   Environment.setSecretKey("FLWSECK_TEST-92e*******-X");
