@@ -5,5 +5,6 @@ public enum AuthorizationModes {
     AUS_NOAUTH,
     REDIRECT,
     OTP,
-    PIN
+    PIN,
+    CALLBACK
 }
