@@ -2,6 +2,7 @@ package com.flutterwave.bean;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -104,6 +105,11 @@ public class Data {
     private String response_message;
     private String product_code;
     private String email;
+    private String account_number;
+    private String expiry_date;
+    private String note;
+    private String active;
+    private String frequency;
 
     private Customer getCustomer(){
         try {
@@ -138,5 +144,21 @@ public class Data {
             return this.customer.toString();
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+
+        String value = null;
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        try {
+            value = objectMapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return value;
+
     }
 }

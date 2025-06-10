@@ -39,9 +39,22 @@ public class Transactions {
      * Query previously initiated transactions. You can do a single or bulk query with the endpoint depending on your use case.
      * @return ListResponse
      */
-    public ListResponse runGetTransactions() {
+    public ListResponse runGetTransactions(Optional<String> from, Optional<String> to, Optional<String> page,
+                                           Optional<String> customer_email,Optional<String> status,Optional<String> tx_ref,
+                                           Optional<String> customer_fullname, Optional<String> currency) {
+
+        List<NameValuePair> nameValuePairs = new ArrayList<>();
+        from.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("from", from.get())));
+        to.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("to", to.get())));
+        page.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("page", page.get())));
+        customer_email.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("customer_email", customer_email.get())));
+        status.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("status", status.get())));
+        tx_ref.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("tx_ref", tx_ref.get())));
+        customer_fullname.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("customer_fullname", customer_fullname.get())));
+        currency.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("currency", currency.get())));
+
         return Optional.of(get(getProperty("VERIFY_TRANSACTION_ENDPOINT"),
-                        GET_TRANSACTION, null))
+                        GET_TRANSACTION, nameValuePairs))
                 .map(ListResponse::toListResponse).orElseThrow(() -> new RuntimeException(ERROR));
     }
 
@@ -91,9 +104,18 @@ public class Transactions {
     }
 
     public class Refunds {
-        public ListResponse runGet() {
+        public ListResponse runGet(Optional<String> from, Optional<String> to, Optional<String> status,
+                                   Optional<String> currency,Optional<String> id) {
+
+            List<NameValuePair> nameValuePairs = new ArrayList<>();
+            from.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("from", from.get())));
+            to.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("to", to.get())));
+            currency.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("currency", currency.get())));
+            id.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("id", id.get())));
+            status.ifPresent(String -> nameValuePairs.add(new BasicNameValuePair("status", status.get())));
+
             return Optional.of(get(getProperty("REFUND_ENDPOINT"),
-                            REFUND, null))
+                            REFUND, nameValuePairs))
                     .map(ListResponse::toListResponse).orElseThrow(() -> new RuntimeException(ERROR));
         }
 

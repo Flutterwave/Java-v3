@@ -30,7 +30,9 @@ class TransactionsTest {
 
     @Test
     void runGetTransactions() {
-        Assertions.assertEquals("success", new Transactions().runGetTransactions().getStatus());
+        Assertions.assertEquals("success", new Transactions().runGetTransactions(Optional.empty(),
+                Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(),
+                Optional.empty(), Optional.empty()).getStatus());
     }
 
     @Test
@@ -52,7 +54,13 @@ class TransactionsTest {
 
     @Test
     void rungetRefunds() {
-        Assertions.assertEquals("success", new Transactions().new Refunds().runGet().getStatus());
+        Assertions.assertEquals("success", new Transactions().new Refunds().runGet(
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty()
+        ).getStatus());
     }
 
     @Test

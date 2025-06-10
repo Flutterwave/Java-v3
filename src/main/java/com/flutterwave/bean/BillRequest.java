@@ -16,12 +16,16 @@ public class BillRequest extends Shared {
     private String recurrence;
     private String country;
     private String customer;
+    private String type;
+    private String reference;
 
 
-    public BillRequest(String country, String customer, BigDecimal amount,
+    public BillRequest(String country, String customer, BigDecimal amount, String type, String reference,
                        Optional<Recurrence> recurrence, Optional<GhanaAirtimeBills> ghanaAirtimeBills) {
 
         this.country = country;
+        this.type = type;
+        this.reference = reference;
         this.customer = customer;
         this.setAmount(amount);
         recurrence.ifPresent(value -> this.recurrence = String.valueOf(value));

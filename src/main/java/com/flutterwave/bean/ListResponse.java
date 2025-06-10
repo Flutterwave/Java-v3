@@ -24,7 +24,6 @@ public class ListResponse {
     private String code;
 
     public static ListResponse toListResponse(String value){
-        System.out.println(value);
         return new GsonBuilder().create().
                 fromJson(value, ListResponse.class);
     }

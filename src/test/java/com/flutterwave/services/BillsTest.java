@@ -32,6 +32,8 @@ class BillsTest {
         billRequest = new BillRequest("NG",
                 "+23490803840303",
                 new BigDecimal("500"),
+                "AIRTIME",
+                "14rdxs",
                         Optional.of(ONCE),
                         Optional.empty());
     }
