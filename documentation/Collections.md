@@ -13,18 +13,18 @@ Collect payments from your users via any of these methods:
 2. [Bank transfers](#bank-transfers)
 3. [Direct debit (Nigerian bank accounts)](#direct-debit-nigerian-bank-account)
 4. [Direct debit (UK bank accounts)](#direct-debit-uk-bank-account)
-5. ACH payments
-6. Mpesa
-7. Ghana Mobile Money
-8. Uganda Mobile Money
-9. Rwanda Mobile Money
-10. Zambia Mobile Money
-11. Francophone Mobile Money (for Senegal, Côte d'Ivoire, Mali, and Cameroon).
-12. USSD
-13. Apple Pay
-14. Google Pay
-15. PayPal
-16. Fawrypay
+5. [ACH payment](#ach-payment)
+6. [Mpesa](#mpesa)
+7. [Ghana Mobile Money](#ghana-mobile-money)
+8. [Uganda Mobile Money](#uganda-mobile-money)
+9. [Rwanda Mobile Money](#rwanda-mobile-money)
+10. [Zambia Mobile Money](zambia-mobile-money)
+11. [Francophone Mobile Money (for Senegal, Côte d'Ivoire, Mali, and Cameroon)](#francophone-mobile-money).
+12. [USSD](#ussd)
+13. [Apple Pay](#apple-pay)
+14. [Google Pay](#google-pay)
+15. [PayPal](#paypal)
+16. [Fawrypay](fawry-pay)
 
 There are three steps involved in collecting payments from your users:
 
