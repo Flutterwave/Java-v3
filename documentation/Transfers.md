@@ -10,7 +10,7 @@ We recommend reading the main README first to understand the requirements for us
 ## Create a transfer
 This describes how to initiate a transfer
 
-For more info about the payload parameters definition, check [here](https://developer.flutterwave.com/v3.0.0/reference/charge-via-bank-transfer).
+For more info about the payload parameters definition, check [here](https://developer.flutterwave.com/v3.0.0/reference/create-a-transfer).
 
 ```java
 Response flwResponse = new Transfer()
