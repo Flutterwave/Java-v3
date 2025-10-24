@@ -8,7 +8,7 @@ We recommend reading the main README first to understand the requirements for us
 
 ### Get all banks
 
-This describes how to get a list of banks you can transfer to
+This describes how to get a list of banks you can transfer to.
 
 ```java
 
@@ -18,7 +18,7 @@ Response flwResponse = new Banks()
 
 ### Get bank branches
 
-This describes how to get a list of bank branches
+This describes how to get a list of bank branches.
 ```java
 Response flwResponse = new Banks()
         .getBankBranches(id)
