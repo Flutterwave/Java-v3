@@ -4,13 +4,13 @@
 
 # Payment plans
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the main README first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 
 ##  Create Payment Plan
 
 
-This describes how to create a payment plan
+This describes how to create a payment plan.
 
 ```java
 Response flwResponse = new PaymentPlan()
@@ -22,7 +22,7 @@ Response flwResponse = new PaymentPlan()
 
 ##  Get payment plans
 
-This describes how to get payment plans
+This describes how to get payment plans.
 
 ```java
 ListResponse flwResponse = new PaymentPlan()
@@ -31,7 +31,7 @@ ListResponse flwResponse = new PaymentPlan()
 
 ##  Get a Payment Plan
 
-This describes how to get a payment plan
+This describes how to get a specific payment plan using its ID.
 
 ```java
 ListResponse flwResponse = new PaymentPlan()
@@ -40,7 +40,7 @@ ListResponse flwResponse = new PaymentPlan()
 
 ##  Update a Payment Plan
 
-This describes how to update a payment plan
+This describes how to update a payment plan.
 
 ```java
 ListResponse flwResponse = new PaymentPlan()
@@ -50,7 +50,7 @@ ListResponse flwResponse = new PaymentPlan()
 
 ##  Cancel a Payment Plan
 
-This describes how to cancel a payment plan
+This describes how to cancel a payment plan.
 
 ```java
 ListResponse flwResponse = new PaymentPlan()
