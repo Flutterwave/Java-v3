@@ -4,11 +4,11 @@
 
 # BANKS
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the main README first to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
 
 ### Get all banks
 
-This describes how to get list of banks you can transfer to
+This describes how to get a list of banks you can transfer to
 
 ```java
 
