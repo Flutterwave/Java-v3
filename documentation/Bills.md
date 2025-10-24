@@ -4,12 +4,12 @@
 
 # Bills
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the main README first to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
 
 
 ##  Get Bill Categories
 
-This describes how to get bill categories
+This describes how to get bill categories.
 
 ```java
 new Bills().getCategories(Optional.airtime,
@@ -23,7 +23,7 @@ new Bills().getCategories(Optional.airtime,
 
 ##  Create a bill payment
 
-This describes how to create a bill payment
+This describes how to create a bill payment.
 
 ```java
 Response response = new Bills()
@@ -36,7 +36,7 @@ Response response = new Bills()
 
 ##  Validate a bill service
 
-This describes how to validate a bill service
+This describes how to validate a bill service.
 
 ```java
 Response response = new Bills().validateBillService("AT099",
@@ -45,7 +45,7 @@ Response response = new Bills().validateBillService("AT099",
 
 ##  Create bulk bills
 
-This describes how to create bulk bills
+This describes how to create bulk bills.
 
 ```java
 List<BillRequest> billRequestList = new ArrayList<>();
@@ -57,16 +57,16 @@ Response response = new Bills()
 
 ##  Get bill payments
 
-This describes how to get bill payments
+This describes how to get bill payments.
 
 ```java
 Response response = new Bills()
         .getBills(from, to);
 ```
 
-##  Get actions of a bill payment
+##  Get actions of a bill payment.
 
-This describes how to get actions of a bill payment
+This describes how to get the status of a bill payment.
 
 ```java
 Response response = new Bills().getStatus(id);
