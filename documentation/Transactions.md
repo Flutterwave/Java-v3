@@ -4,7 +4,7 @@
 
 # Transactions
 
-We recommend reading the main README first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 ## Verify a transaction
 
