@@ -4,7 +4,7 @@
 
 # BENEFICIARIES
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the main README first to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
 
 
 
