@@ -4,13 +4,13 @@
 
 # Subscriptions
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the main README first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 
 ##  Get all subscriptions
 
 
-This describes how to get all subscriptions
+This describes how to get all subscriptions.
 
 ```java
 ListResponse flwResponse = new Subscriptions()
@@ -19,7 +19,7 @@ ListResponse flwResponse = new Subscriptions()
 
 ##  Activate a Subscription
 
-This describes how to activate a subscription
+This describes how to activate a subscription.
 
 ```java
 Response flwResponse = new Subscriptions().
@@ -28,7 +28,7 @@ Response flwResponse = new Subscriptions().
 
 ##  Deactivate a Subscription
 
-This describes how to activate a subscription
+This describes how to deactivate a subscription.
 
 ```java
 Response flwResponse = new Subscriptions().
