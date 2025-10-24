@@ -4,12 +4,12 @@
 
 # SubAccounts
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 
 ##  Create Collection Subaccounts
 
-This describes how to create a collection subaccount
+This describes how to create a collection subaccount.
 
 ```java
 Response flwResponse = new SubAccounts()
@@ -31,7 +31,7 @@ Response flwResponse = new SubAccounts()
 
 ##  Create Payout Subaccounts
 
-This describes how to create a payout subaccount
+This describes how to create a payout subaccount.
 
 ```java
 Response flwResponse = new SubAccounts()
@@ -43,7 +43,7 @@ Response flwResponse = new SubAccounts()
 
 ##  Fetch collection subaccounts
 
-This describes how to create a fetch collection subaccounts
+This describes how to fetch a collection subaccount.
 
 ```java
 Response flwResponse = new SubAccounts()
@@ -57,7 +57,7 @@ Response flwResponse = new SubAccounts()
 
 ##  Fetch payout subaccounts
 
-This describes how to create a fetch payout subaccounts
+This describes how to fetch payout subaccounts.
 
 ```java
 Response flwResponse = new SubAccounts()
@@ -72,7 +72,7 @@ Response flwResponse = new SubAccounts()
 
 ##  Fetch a collection subaccount
 
-This describes how to create a fetch a collection subaccount
+This describes how to fetch a specific collection subaccount using the ID.
 
 ```java
 Response flwResponse = new SubAccounts()
@@ -85,7 +85,7 @@ Response flwResponse = new SubAccounts()
 
 ##  Update a collection subaccount
 
-This describes how to create a fetch a collection subaccount
+This describes how to update a collection subaccount.
 
 ```java
 Response flwResponse = new SubAccounts()
@@ -99,7 +99,7 @@ Response flwResponse = new SubAccounts()
 
 ##  Delete a subaccount
 
-This describes how to create a delete a collection subaccount
+This describes how to delete a collection subaccount.
 
 ```java
 Response flwResponse = new SubAccounts()

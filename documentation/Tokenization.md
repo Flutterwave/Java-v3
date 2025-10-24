@@ -4,11 +4,11 @@
 
 # Tokenization
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 ## Create a Tokenized Charge
 
-This describes how to create a tokenized charge
+This describes how to create a tokenized charge.
 
 ```java
 
@@ -27,7 +27,7 @@ Response flwResponse = new TokenizedCharge()
 
 ## Create bulk Tokenized Charges
 
-This describes how to create a bulk tokenized charge
+This describes how to create a bulk tokenized charge.
 
 ```java
 List<TokenizedChargeRequest> tokenizedChargeRequestList= new ArrayList<>();
@@ -39,7 +39,7 @@ Response flwResponse = new TokenizedCharge()
 
 ## Get bulk Tokenized Charges
 
-This describes how to get bulk tokenized charge
+This describes how to get a bulk tokenized charge.
 
 ```java
 ListResponse flwResponse = new TokenizedCharge()
@@ -48,7 +48,7 @@ ListResponse flwResponse = new TokenizedCharge()
 
 ## Get actions of bulk Tokenized Charges
 
-This describes how to get bulk tokenized charge
+This describes how to get a bulk tokenized charge.
 
 ```java
 Response flwResponse = new TokenizedCharge()
@@ -57,7 +57,7 @@ Response flwResponse = new TokenizedCharge()
 
 ## Update Card token
 
-This describes how to update card token
+This describes how to update the card token.
 
 ```java
 Response flwResponse = new TokenizedCharge()

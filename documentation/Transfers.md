@@ -4,13 +4,13 @@
 
 # TRANSFERS
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 
 ## Create a transfer
 This describes how to initiate a transfer
 
-For more info about the payload parameteres definition, check  [here](https://developer.flutterwave.com/reference#create-a-transfer)
+For more info about the payload parameters definition, check [here](https://developer.flutterwave.com/v3.0.0/reference/create-a-transfer).
 
 ```java
 Response flwResponse = new Transfer()
@@ -26,7 +26,7 @@ Response flwResponse = new Transfer()
 
 ## Retry a Transfer
 
-This describes how to retry a transfer
+This describes how to retry a transfer.
 
 ```java
 Response flwResponse = new Transfer().retry(id);
@@ -34,7 +34,7 @@ Response flwResponse = new Transfer().retry(id);
 
 ## Create a Bulk transfer
 
-This describes how to create a bulk transfer
+This describes how to create a bulk transfer.
 
 ```java
 List<TransferRequest> transferRequestList = new ArrayList<>();
@@ -46,7 +46,7 @@ Response flwResponse = new Transfer()
 
 ## Get Transfer fees
 
-This describes how to get a transfer fee
+This describes how to get a transfer fee.
 
 ```java
 Response flwResponse = new Transfer()
@@ -55,7 +55,7 @@ Response flwResponse = new Transfer()
 
 ## Get all Transfers
 
-This describes how to get all transfers
+This describes how to get all transfers.
 
 ```java
 Response flwResponse = new Transfer()
@@ -65,7 +65,7 @@ Response flwResponse = new Transfer()
 
 ## Fetch a Transfer
 
-This describes how to get all transfers
+This describes how to get all transfers.
 
 ```java
 Response flwResponse = new Transfer().getTransfer(id);
@@ -73,7 +73,7 @@ Response flwResponse = new Transfer().getTransfer(id);
 
 ## Get Transfer Rates
 
-This describes how to get transfer rates
+This describes how to get transfer rates.
 
 ```java
 Response flwResponse = new Transfer()

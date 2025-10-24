@@ -4,12 +4,12 @@
 
 # OTPS
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 
 ###  Create Otp
 
-This describes how to create an otp
+This describes how to create an otp.
 
 ```java
 List<Medium> mediumList = new ArrayList<>();
@@ -28,7 +28,7 @@ ListResponse flwResponse = new OTP().runCreateOTP(new OTPRequest(new Customer(
 
 ###  Validate Otp
 
-This describes how to validate an otp
+This describes how to validate an otp.
 
 ```java
 Response flwResponse = new OTP().runValidateOTP(

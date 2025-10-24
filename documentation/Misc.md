@@ -4,11 +4,11 @@
 
 # MISC
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 ### Resolve account details
 
-This describes how to resolve a bank account to get the account holder's details
+This describes how to resolve a bank account to get the account holder's details.
 
 ```java
 Response flwResponse = new  ResolveAccount()
@@ -20,9 +20,9 @@ Response flwResponse = new  ResolveAccount()
         ));
 ```
 
-### Resolve bvn details
+### Resolve BVN details
 
-This describes how to fetch bvn information
+This describes how to fetch BVN information.
 
 ```java
 Response flwResponse =  new ResolveBVN().

@@ -4,8 +4,8 @@
 
 # Collections
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate
-this in your apps. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
+
 
 Collect payments from your users via any of these methods:
 
@@ -13,31 +13,31 @@ Collect payments from your users via any of these methods:
 2. [Bank transfers](#bank-transfers)
 3. [Direct debit (Nigerian bank accounts)](#direct-debit-nigerian-bank-account)
 4. [Direct debit (UK bank accounts)](#direct-debit-uk-bank-account)
-5. ACH payments
-6. Mpesa
-7. Ghana Mobile Money
-8. Uganda Mobile Money
-9. Rwanda Mobile Money
-10. Zambia Mobile Money
-11. Francophone Mobile Money (for Senegal, Cote D'Ivoire, Mali and Cameroon).
-12. USSD
-13. Applepay
-14. Googlepay
-15. Paypal
-16. Fawrypay
+5. [ACH payment](#ach-payment)
+6. [Mpesa](#mpesa)
+7. [Ghana Mobile Money](#ghana-mobile-money)
+8. [Uganda Mobile Money](#uganda-mobile-money)
+9. [Rwanda Mobile Money](#rwanda-mobile-money)
+10. [Zambia Mobile Money](#zambia-mobile-money)
+11. [Francophone Mobile Money (for Senegal, Côte d'Ivoire, Mali, and Cameroon)](#francophone-mobile-money).
+12. [USSD](#ussd)
+13. [Apple Pay](#applepay)
+14. [Google Pay](#googlepay)
+15. [PayPal](#paypal)
+16. [Fawrypay](fawrypay)
 
 There are three steps involved in collecting payments from your users:
 
-- Initating the transaction.
+- Initiating the transaction.
 - Authorizing the transaction.
 - Verifying the transaction.
 
-Read more about the steps [here](https://developer.flutterwave.com/docs/direct-charge/overview)
+Read more about the steps [here](https://developer.flutterwave.com/v3.0.0/docs/direct-card-charge#payment-flow).
 
 ## Card Collections
 
-This section describes how you can collect card payments in the SDK. You can learn more about the payment
-method [here](https://developer.flutterwave.com/docs/direct-charge/card).
+This section describes how you can collect card payments in the SDK. You can learn more about the payment.
+method [here](https://developer.flutterwave.com/v3.0.0/docs/direct-card-charge).
 
 ```java
 Optional.ofNullable(new CardCharge()
@@ -80,7 +80,7 @@ Optional.ofNullable(new CardCharge()
 ## Preauth Collections
 
 This section describes how you can collect card preauth payments in the SDK. You can learn more about the payment
-method [here](https://developer.flutterwave.com/docs/direct-charge/card).
+method [here](https://developer.flutterwave.com/v3.0.0/docs/preauthorization).
 
 ```java
 Response flwResponse=new PreAuthorization(
@@ -100,8 +100,8 @@ Response flwResponse=new PreAuthorization(
 
 ## Bank Transfers
 
-This section covers how you can collect payments made via bank transfers. We go into more details on the payment flow
-itself [here](https://developer.flutterwave.com/docs/direct-charge/bank-transfer).
+This section covers how you can collect payments made via bank transfers. We go into more detail on the payment flow.
+itself [here](https://developer.flutterwave.com/v3.0.0/docs/bank-transfer-1).
 
 ```java
 Response flwResponse=new BanKTransfer()
@@ -147,10 +147,10 @@ Response flwResponse=new BankAccount()
         );
 ```
 
-## ACH Payement
+## ACH Payment
 
 This shows you how to accept ZAR and USD ACH charges from your customers. Read more about ACH
-payments [here](https://developer.flutterwave.com/docs/direct-charge/ach-payment).
+payments [here](https://developer.flutterwave.com/v3.0.0/docs/ach-payment).
 
 ```java
 Response flwResponse=new ACH()
@@ -170,7 +170,7 @@ Response flwResponse=new ACH()
 
 ## USSD
 
-This describes how to collect payments via ussd
+This describes how to collect payments via USSD.
 
 ```java
 Response flwResponse=new USSD().runTransaction(new USSDRequest("MC-15852309v5050e8y",
@@ -185,8 +185,8 @@ Response flwResponse=new USSD().runTransaction(new USSDRequest("MC-15852309v5050
 
 ## Mpesa
 
-This describes how to collect payments via Mpesa. Read more about Mpesa
-payments [here](https://developer.flutterwave.com/docs/direct-charge/mpesa).
+This describes how to collect payments via M-Pesa. Read more about M-Pesa.
+payments [here](https://developer.flutterwave.com/v3.0.0/docs/m-pesa).
 
 ```java
 Response flwResponse=new MobileMoney().runMpesaTransaction(new MpesaRequest("MC-15852113s09v5050e8",
@@ -232,7 +232,7 @@ Sample Response
 }
 ```
 
-**Redirect customer to the redirect link returned in the charge initiation response.**
+**Redirect your customer to the redirect link returned in the charge initiation response.**
 **NB: OTP on staging (TEST MODE) is `123456`**
 
 ## Rwanda mobile money
@@ -309,7 +309,7 @@ Response flwResponse=new MobileMoney()
 
 ## Applepay
 
-This describes how to collect payments via Applepay.
+This describes how to collect payments via Apple Pay.
 
 ```java
 Response flwResponse=new ApplePay().runTransaction(new ApplePayRequest("MC-TEST-123456",
@@ -331,7 +331,7 @@ Response flwResponse=new ApplePay().runTransaction(new ApplePayRequest("MC-TEST-
 
 ## Googlepay
 
-This describes how to collect payments via Googlepay.
+This describes how to collect payments via Google Pay.
 
 ```java
 Response flwResponse=new GooglePay().runTransaction(new GooglePayRequest("MC-TEST-123456",
@@ -353,7 +353,7 @@ Response flwResponse=new GooglePay().runTransaction(new GooglePayRequest("MC-TES
 
 ## Paypal
 
-This describes how to collect payments via Paypal.
+This describes how to collect payments via PayPal.
 
 ```java
 Response flwResponse=new Paypal().runTransaction(new PaypalRequest(

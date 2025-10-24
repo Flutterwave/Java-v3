@@ -9,25 +9,25 @@
 
 ## Introduction
 
-The Java library provides easy access to Flutterwave for Business (F4B) v3 APIs for your Java codebase. It abstracts the complexity involved in direct integration and allows you to make quick calls to the APIs.
+The Java library provides easy access to Flutterwave for Business (F4B) v3 APIs for your Java codebase. It abstracts the complexity involved in direct integration, enabling you to make quick calls to the APIs.
 
 Available features include:
 
-- Collections: Card, Account, Mobile money, Bank Transfers, USSD, Barter, NQR.
+- Collections: Card, Account, Mobile money, Bank Transfers, USSD, Barter, and NQR.
 - Payouts and Beneficiaries.
 - Recurring payments: Tokenization and Subscriptions.
-- Split payments
-- Card issuing
+- Split payments.
+- Card issuing.
 - Transactions dispute management: Refunds and Chargebacks.
-- Transaction reporting: Collections, Payouts, Settlements, Refunds and Chargebacks.
+- Transaction reporting: Collections, Payouts, Settlements, Refunds, and Chargebacks.
 - Bill payments: Airtime, Data bundle, Cable, Power, Toll, E-bills, and Remitta.
-- Identity verification: Resolve bank account, resolve BVN information and generate OTP.
+- Identity verification: Resolve bank account, resolve BVN information, and generate OTP.
 
 # Heads Up!
-This Library cannot be used on a project with a file named "base.properties" in project path.
+This Library cannot be used on a project with a file named "base.properties" in the project path.
 
 
-## Table of Content
+## Table of Contents
 
 1. [Requirements](#requirements)
 2. [Installation](#installation)
@@ -42,8 +42,8 @@ This Library cannot be used on a project with a file named "base.properties" in 
 
 ## Requirements
 
-1. Flutterwave for business [API Keys](https://developer.flutterwave.com/docs/integration-guides/authentication)
-2. Java
+1. Flutterwave for business [API Keys](https://developer.flutterwave.com/v3.0.0/docs/authentication).
+2. Java.
 
 
 ## Installation
@@ -68,7 +68,7 @@ compile("com.flutterwave:f4b-java:3.0")
 
 
 ## Environment Variables
-The foloowing environment variables need to be set before calling any method
+The following environment variables need to be set before calling any method:
 
 ```java
   Environment.setSecretKey("FLWSECK_TEST-92e*******-X");
@@ -76,8 +76,8 @@ The foloowing environment variables need to be set before calling any method
   Environment.setEncryptionKey("FLWSECK_TE********c1f2");
 ```
 
-For staging, Use TEST API Keys and for production, use LIVE API KEYS.
-You can get your keys from the Flutterwave dashboard.
+For staging, use your TEST API Keys, and for production, use your LIVE API Keys.
+You can get your keys from the [Flutterwave dashboard](https://app.flutterwave.com/login).
 
 Read the [requirement section](#requirements) for more information on how to get your API keys.
 
@@ -102,14 +102,14 @@ Read the [requirement section](#requirements) for more information on how to get
 
 ## Debugging Errors
 
-We understand that you may run into some errors while integrating our library. You can read more about our error messages [here](https://developer.flutterwave.com/docs/integration-guides/errors).
+We understand that you may run into some errors while integrating our library. You can read more about our error messages [here](https://developer.flutterwave.com/v3.0.0/docs/common-errors).
 
 For `authorization` and `validation` error responses, double-check your API keys and request. If you get a `server` error, kindly engage the team for support.
 
 
 ## Support
 
-For additional assistance using this library, contact the developer experience (DX) team via [email](mailto:developers@flutterwavego.com) or on [slack](https://bit.ly/34Vkzcg).
+For additional assistance using this library, contact the Developer Experience (DX) team via [email](mailto:developers@flutterwavego.com) or on [slack](https://bit.ly/34Vkzcg).
 
 You can also follow us [@FlutterwaveEng](https://twitter.com/FlutterwaveEng) and let us know what you think 😊.
 

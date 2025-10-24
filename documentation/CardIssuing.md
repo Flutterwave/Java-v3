@@ -4,14 +4,14 @@
 
 # Card Issuing
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 
 ## VIRTUAL CARDS
 
 ## Create virtual card
 
-This describes how to create a new virtual card
+This describes how to create a new virtual card.
 
 ```java
 Response flwResponse = new VirtualCard()
@@ -36,7 +36,7 @@ Response flwResponse = new VirtualCard()
 
 ## Get All Virtual Cards
 
-This describes how to get all virtual cards
+This describes how to get all virtual cards.
 
 ```java
 ListResponse flwResponse = new VirtualCard()
@@ -45,7 +45,7 @@ ListResponse flwResponse = new VirtualCard()
 
 ## Get A Virtual Card
 
-This describes how to get a virtual cards
+This describes how to get a virtual card.
 
 ```java
 Response flwResponse = new VirtualCard()
@@ -54,7 +54,7 @@ Response flwResponse = new VirtualCard()
 
 ## Fund A Virtual Card
 
-This describes how to fund a virtual cards
+This describes how to fund a virtual card.
 
 ```java
 Response flwResponse = new VirtualCard()
@@ -68,7 +68,7 @@ Response flwResponse = new VirtualCard()
 
 ## Withdraw From A Virtual Card
 
-This describes how to wihdraw from a virtual card
+This describes how to withdraw from a virtual card.
 
 ```java
 ListResponse flwResponse = new VirtualCard()
@@ -77,7 +77,7 @@ ListResponse flwResponse = new VirtualCard()
 
 ## Block/Unblock Virtual Card
 
-This describes how to block/unblock a virtual card
+This describes how to block/unblock a virtual card.
 
 ```java
 Response flwResponse = new VirtualCard()
@@ -86,7 +86,7 @@ Response flwResponse = new VirtualCard()
 
 ## Terminate A Virtual Card
 
-This describes how to terminate a virtual card
+This describes how to terminate a virtual card.
 
 ```java
 Response flwResponse = new VirtualCard()
@@ -95,7 +95,7 @@ Response flwResponse = new VirtualCard()
 
 ## Get A Virtual Card's Transactions
 
-This describes how to get a virtual cards' transaction
+This describes how to get a virtual card's transaction.
 
 ```java
 ListResponse flwResponse = new VirtualCard()

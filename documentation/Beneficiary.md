@@ -4,13 +4,13 @@
 
 # BENEFICIARIES
 
-We recommend reading the main readme first, to understand the requirements for using the library and how to initiate this in your apps. This guide assumes you've read that.
+We recommend reading the [main README](../README.md) first to understand the requirements for using the library and how to integrate it into your application. This guide assumes you've read that.
 
 
 
 ## Create a beneficiary
 
-This describes how to create a transfer beneficiary
+This describes how to create a transfer beneficiary.
 ```java
 Response flwResponse = new Beneficiaries()
         .runCreateBeneficiary(new BeneficiaryRequest("0690000034",
@@ -22,7 +22,7 @@ Response flwResponse = new Beneficiaries()
 
 ## List all Transfer Beneficiaries
 
-This describes how to list all transfer beneficiaries
+This describes how to list all transfer beneficiaries.
 ```java
 ListResponse flwResponse = new Beneficiaries()
         .runGetAllBeneficiaries(Optional.page);
@@ -30,7 +30,7 @@ ListResponse flwResponse = new Beneficiaries()
 
 ## Fetch a Transfer Beneficiary
 
-This describes how to fetch a transfer beneficiary
+This describes how to fetch a transfer beneficiary.
 ```java
 Response flwResponse = new Beneficiaries()
         .runGetBeneficiary(Optional.id);
@@ -38,7 +38,7 @@ Response flwResponse = new Beneficiaries()
 
 ## Delete a Transfer Beneficiary
 
-This describes how to delete a transfer beneficiary
+This describes how to delete a transfer beneficiary.
 ```java
 Response flwResponse = new Beneficiaries()
         .runDeleteBeneficiary(Optional.id);
