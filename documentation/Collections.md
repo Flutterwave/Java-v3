@@ -18,13 +18,13 @@ Collect payments from your users via any of these methods:
 7. [Ghana Mobile Money](#ghana-mobile-money)
 8. [Uganda Mobile Money](#uganda-mobile-money)
 9. [Rwanda Mobile Money](#rwanda-mobile-money)
-10. [Zambia Mobile Money](zambia-mobile-money)
+10. [Zambia Mobile Money](#zambia-mobile-money)
 11. [Francophone Mobile Money (for Senegal, Côte d'Ivoire, Mali, and Cameroon)](#francophone-mobile-money).
 12. [USSD](#ussd)
-13. [Apple Pay](#apple-pay)
-14. [Google Pay](#google-pay)
+13. [Apple Pay](#applepay)
+14. [Google Pay](#googlepay)
 15. [PayPal](#paypal)
-16. [Fawrypay](fawry-pay)
+16. [Fawrypay](fawrypay)
 
 There are three steps involved in collecting payments from your users:
 
